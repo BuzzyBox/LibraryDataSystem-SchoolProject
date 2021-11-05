@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="labBorder1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>500</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 3*/
+
+position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lEditSearchBook1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>480</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 10px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+    </property>
+    <property name="text">
+     <string>Search Books</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="ItemBook">
+    <property name="geometry">
+     <rect>
+      <x>21</x>
+      <y>79</y>
+      <width>480</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Widget Book Style Sheet*/
+
+position: absolute;
+width: 328.88px;
+height: 258.34px;
+left: 25.53px;
+top: 154.21px;
+
+background: #EDEDED;
+border-radius: 10px;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearchBook">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>20</y>
+      <width>101</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Search Book Button*/
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #C4C4C4;
+border-radius: 10px; 
+
+/*Text Email*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBorder3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>661</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBorder2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>500</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBookCover">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>360</y>
+      <width>121</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelBookTitleText">
+    <property name="geometry">
+     <rect>
+      <x>158</x>
+      <y>361</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Title:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelAuthorText">
+    <property name="geometry">
+     <rect>
+      <x>157</x>
+      <y>396</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Author:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelPublishText">
+    <property name="geometry">
+     <rect>
+      <x>159</x>
+      <y>431</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Publish Date:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelIDnoText">
+    <property name="geometry">
+     <rect>
+      <x>159</x>
+      <y>466</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>ID Number:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelAvailabilityText">
+    <property name="geometry">
+     <rect>
+      <x>164</x>
+      <y>501</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Availability:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbTitle">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>362</y>
+      <width>430</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Title of Book</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbAuthor">
+    <property name="geometry">
+     <rect>
+      <x>239</x>
+      <y>396</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Author of Book</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbDate">
+    <property name="geometry">
+     <rect>
+      <x>279</x>
+      <y>431</y>
+      <width>371</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Date of Book</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbIDNum">
+    <property name="geometry">
+     <rect>
+      <x>269</x>
+      <y>466</y>
+      <width>381</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>ID Number</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbAvailability">
+    <property name="geometry">
+     <rect>
+      <x>269</x>
+      <y>501</y>
+      <width>381</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Book Availability</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBorder5">
+    <property name="geometry">
+     <rect>
+      <x>888</x>
+      <y>70</y>
+      <width>500</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearchMember">
+    <property name="geometry">
+     <rect>
+      <x>1428</x>
+      <y>20</y>
+      <width>101</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Search Book Button*/
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #C4C4C4;
+border-radius: 10px; 
+
+/*Text Email*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBorder6">
+    <property name="geometry">
+     <rect>
+      <x>888</x>
+      <y>350</y>
+      <width>661</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labBorder4">
+    <property name="geometry">
+     <rect>
+      <x>888</x>
+      <y>20</y>
+      <width>500</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 3*/
+
+position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lEditSearchMember">
+    <property name="geometry">
+     <rect>
+      <x>898</x>
+      <y>30</y>
+      <width>480</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 10px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+    </property>
+    <property name="text">
+     <string>Search Members</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="ItemMember">
+    <property name="geometry">
+     <rect>
+      <x>898</x>
+      <y>79</y>
+      <width>480</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Widget Book Style Sheet*/
+
+position: absolute;
+width: 328.88px;
+height: 258.34px;
+left: 25.53px;
+top: 154.21px;
+
+background: #EDEDED;
+border-radius: 10px;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMemberEmailText">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>465</y>
+      <width>61</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Email:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMemberPhoneText">
+    <property name="geometry">
+     <rect>
+      <x>903</x>
+      <y>498</y>
+      <width>61</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Phone:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelUserNameText">
+    <property name="geometry">
+     <rect>
+      <x>894</x>
+      <y>400</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Username:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMemberNameTxt">
+    <property name="geometry">
+     <rect>
+      <x>899</x>
+      <y>368</y>
+      <width>61</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Name:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lableMemberAddressText">
+    <property name="geometry">
+     <rect>
+      <x>903</x>
+      <y>431</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Address:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelBooksOutText">
+    <property name="geometry">
+     <rect>
+      <x>1294</x>
+      <y>430</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Books Out:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelFeesText">
+    <property name="geometry">
+     <rect>
+      <x>1294</x>
+      <y>483</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Book Fees:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbUName">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>400</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebName">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>368</y>
+      <width>311</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Member's Name</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebBirthdate">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>400</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Date of Birth</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebEmail">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>465</y>
+      <width>311</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Email</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebPhone">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>498</y>
+      <width>311</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Phone Number</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebNoBooks">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>431</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Num of Books</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebFees">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>482</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>$</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebID">
+    <property name="geometry">
+     <rect>
+      <x>1400</x>
+      <y>270</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMemberIDText">
+    <property name="geometry">
+     <rect>
+      <x>1400</x>
+      <y>240</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Member ID:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbGen">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>370</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Gender</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMemberGenderText">
+    <property name="geometry">
+     <rect>
+      <x>1300</x>
+      <y>370</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Gender:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lableBritdayDateText_2">
+    <property name="geometry">
+     <rect>
+      <x>1293</x>
+      <y>400</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+    </property>
+    <property name="text">
+     <string>Birth Date:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbmebAdd">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>432</y>
+      <width>301</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+    </property>
+    <property name="text">
+     <string>Address</string>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+   </widget>
+   <zorder>labBorder2</zorder>
+   <zorder>labBorder1</zorder>
+   <zorder>lEditSearchBook1</zorder>
+   <zorder>ItemBook</zorder>
+   <zorder>btnSearchBook</zorder>
+   <zorder>labBorder3</zorder>
+   <zorder>labBookCover</zorder>
+   <zorder>labelBookTitleText</zorder>
+   <zorder>labelAuthorText</zorder>
+   <zorder>labelPublishText</zorder>
+   <zorder>labelIDnoText</zorder>
+   <zorder>labelAvailabilityText</zorder>
+   <zorder>lbTitle</zorder>
+   <zorder>lbAuthor</zorder>
+   <zorder>lbDate</zorder>
+   <zorder>lbIDNum</zorder>
+   <zorder>lbAvailability</zorder>
+   <zorder>labBorder5</zorder>
+   <zorder>btnSearchMember</zorder>
+   <zorder>labBorder6</zorder>
+   <zorder>labBorder4</zorder>
+   <zorder>lEditSearchMember</zorder>
+   <zorder>ItemMember</zorder>
+   <zorder>labelMemberEmailText</zorder>
+   <zorder>labelMemberPhoneText</zorder>
+   <zorder>labelUserNameText</zorder>
+   <zorder>labelMemberNameTxt</zorder>
+   <zorder>lableMemberAddressText</zorder>
+   <zorder>labelBooksOutText</zorder>
+   <zorder>labelFeesText</zorder>
+   <zorder>lbUName</zorder>
+   <zorder>lbmebName</zorder>
+   <zorder>lbmebBirthdate</zorder>
+   <zorder>lbmebEmail</zorder>
+   <zorder>lbmebPhone</zorder>
+   <zorder>lbmebNoBooks</zorder>
+   <zorder>lbmebFees</zorder>
+   <zorder>lbmebID</zorder>
+   <zorder>labelMemberIDText</zorder>
+   <zorder>lbGen</zorder>
+   <zorder>labelMemberGenderText</zorder>
+   <zorder>lableBritdayDateText_2</zorder>
+   <zorder>lbmebAdd</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Members</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionNew_Member"/>
+    <addaction name="actionEdit_Existing_Member"/>
+    <addaction name="actionLoad_Members"/>
+    <addaction name="actionSave_Members"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuBooks">
+    <property name="title">
+     <string>Books</string>
+    </property>
+    <addaction name="actionAdd_Book"/>
+    <addaction name="actionEdit_Existing_Book"/>
+    <addaction name="actionLoad_Books"/>
+    <addaction name="actionSave_Books"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuBooks"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_Member">
+   <property name="text">
+    <string>New Member</string>
+   </property>
+  </action>
+  <action name="actionEdit_Existing_Member">
+   <property name="text">
+    <string>Edit Existing Member</string>
+   </property>
+  </action>
+  <action name="actionLoad_Members">
+   <property name="text">
+    <string>Load Members</string>
+   </property>
+  </action>
+  <action name="actionSave_Members">
+   <property name="text">
+    <string>Save Members</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAdd_Book">
+   <property name="text">
+    <string>Add Book</string>
+   </property>
+  </action>
+  <action name="actionEdit_Existing_Book">
+   <property name="text">
+    <string>Edit Existing Book</string>
+   </property>
+  </action>
+  <action name="actionLoad_Books">
+   <property name="text">
+    <string>Load Books</string>
+   </property>
+  </action>
+  <action name="actionSave_Books">
+   <property name="text">
+    <string>Save Books</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>lognin_menu</class>
+ <widget class="QDialog" name="lognin_menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lbBorderLogin">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>741</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Rectangle 1 */
+
+
+position: absolute;
+width: 794px;
+height: 491px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 8px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbLoginText">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>341</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Text*/
+
+position: absolute;
+width: 164px;
+height: 56px;
+left: 112px;
+top: 47px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 56px;
+display: flex;
+align-items: center;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>Library System Login</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*login Username Text*/
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Username:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>305</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+/*Login Password Text*/
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Password:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnLogin">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>490</y>
+     <width>120</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Login btn*/
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #EDEDED;
+border-radius: 10px; 
+
+/*Text Email*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Login</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtUsername">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>180</y>
+     <width>591</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border Sign-up 3 */
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #EDEDED;
+border-radius: 10px; 
+
+/*Text Password*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtPassword">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>300</y>
+     <width>591</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border Sign-up 2 */
+
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #EDEDED;
+border-radius: 10px; 
+
+/*Text Username*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

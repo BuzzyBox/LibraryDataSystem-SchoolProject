@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>edit_book</class>
+ <widget class="QDialog" name="edit_book">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="labelBorder1">
+   <property name="geometry">
+    <rect>
+     <x>25</x>
+     <y>70</y>
+     <width>741</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Rectangle 1 */
+
+
+position: absolute;
+width: 794px;
+height: 491px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 8px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEditBook">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>20</y>
+     <width>300</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Text*/
+
+position: absolute;
+width: 164px;
+height: 56px;
+left: 112px;
+top: 47px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 56px;
+display: flex;
+align-items: center;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>Edit Books</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdGenresText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>225</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Book Genres:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdAuthorText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>135</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Author:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdBookDesText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>270</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Book Description:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdBookTitleText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>90</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Title:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdNoOfBookText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>450</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>No of Books:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdPublishDateText">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>180</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Publish Date:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdIDNumText">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>180</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>ID No: </string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEditA">
+   <property name="geometry">
+    <rect>
+     <x>105</x>
+     <y>135</y>
+     <width>641</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>-1</number>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSaveEditBook">
+   <property name="geometry">
+    <rect>
+     <x>655</x>
+     <y>500</y>
+     <width>101</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border Sign-up 4 */
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #EDEDED;
+border-radius: 10px; 
+
+/*Text Email*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sBEditNB">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>450</y>
+     <width>581</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*boader Date*/
+position: absolute;
+width: 156px;
+height: 37px;
+left: 239px;
+top: 352px;
+
+background: #EDEDED;
+border-radius: 8px; 
+
+/*Text Date*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+color: #868181;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cBxGen">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>225</y>
+     <width>591</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*boader Gender*/
+position: absolute;
+width: 156px;
+height: 37px;
+left: 239px;
+top: 352px;
+
+background: #EDEDED;
+border-radius: 8px; 
+
+/*Text Gender*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dEeditPD">
+   <property name="geometry">
+    <rect>
+     <x>544</x>
+     <y>180</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*boader Date*/
+position: absolute;
+width: 156px;
+height: 37px;
+left: 239px;
+top: 352px;
+
+background: #EDEDED;
+border-radius: 8px; 
+
+/*Text Date*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+color: #868181;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEditBT">
+   <property name="geometry">
+    <rect>
+     <x>85</x>
+     <y>90</y>
+     <width>661</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>-1</number>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEditIDno">
+   <property name="geometry">
+    <rect>
+     <x>105</x>
+     <y>180</y>
+     <width>311</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>-1</number>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txtEditBD">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>270</y>
+     <width>561</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

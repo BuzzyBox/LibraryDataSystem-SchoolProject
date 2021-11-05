@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>welcome_screen</class>
+ <widget class="QDialog" name="welcome_screen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lbAboutUs">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>220</y>
+     <width>401</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border*/
+
+width: 449px;
+height: 358px;
+left: 36px;
+top: 280px;
+
+background: #C4C4C4;
+border-radius: 10px; 
+
+/*Text*/
+
+position: absolute;
+width: 365px;
+height: 295px;
+left: 83px;
+top: 304px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.408px;
+
+color: #000000;
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string>About Us!
+
+ Lorem ipsum dolr sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore at dolore magne aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cnsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbWelcometoBookNook">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>511</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">position: absolute;
+width: 638px;
+height: 74px;
+left: 34px;
+top: 38px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 56px;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string>Welcome to BookNook!</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbBorderSearch">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>500</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 3*/
+
+position: absolute;
+width: 613px;
+height: 104px;
+left: 34px;
+top: 112px;
+
+background: #C4C4C4;
+border-radius: 20px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSearchBook1">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>480</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 10px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+   </property>
+   <property name="text">
+    <string>Search Books</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>250</y>
+     <width>171</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">position: absolute;
+width: 265px;
+height: 82px;
+left: 572px;
+top: 319px;
+
+background: #C4C4C4;
+border-radius: 15px;
+
+position: absolute;
+width: 169px;
+height: 31px;
+left: 623px;
+top: 345px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 22px;
+/* or 46% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Sign-Up</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BtnLogin">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>400</y>
+     <width>171</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>-1</pointsize>
+     <weight>62</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">position: absolute;
+width: 265px;
+height: 82px;
+left: 572px;
+top: 319px;
+
+background: #C4C4C4;
+border-radius: 15px;
+
+position: absolute;
+width: 169px;
+height: 31px;
+left: 623px;
+top: 345px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 22px;
+/* or 46% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Login</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
