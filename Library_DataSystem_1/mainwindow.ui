@@ -1424,90 +1424,6 @@ color: #605E5E;</string>
      <number>3</number>
     </property>
    </widget>
-   <widget class="QLabel" name="lbmebID">
-    <property name="geometry">
-     <rect>
-      <x>1400</x>
-      <y>270</y>
-      <width>141</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/*Border 2 */
-
-
-position: absolute;
-width: 560px;
-height: 45px;
-left: 53px;
-top: 142px;
-
-background: #EDEDED;
-border-radius: 5px;
-
-/*Text*/
-
-position: absolute;
-width: 305px;
-height: 31px;
-left: 115px;
-top: 153px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-/* or 92% */
-
-letter-spacing: -0.408px;
-
-color: #605E5E;</string>
-    </property>
-    <property name="text">
-     <string>ID</string>
-    </property>
-    <property name="margin">
-     <number>3</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelMemberIDText">
-    <property name="geometry">
-     <rect>
-      <x>1400</x>
-      <y>240</y>
-      <width>101</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* Name: */
-
-
-position: absolute;
-width: 104px;
-height: 28px;
-left: 65px;
-top: 136px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-/* or 92% */
-
-text-align: center;
-letter-spacing: -0.408px;</string>
-    </property>
-    <property name="text">
-     <string>Member ID:</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="lbGen">
     <property name="geometry">
      <rect>
@@ -1713,8 +1629,6 @@ color: #605E5E;</string>
    <zorder>lbmebPhone</zorder>
    <zorder>lbmebNoBooks</zorder>
    <zorder>lbmebFees</zorder>
-   <zorder>lbmebID</zorder>
-   <zorder>labelMemberIDText</zorder>
    <zorder>lbGen</zorder>
    <zorder>labelMemberGenderText</zorder>
    <zorder>lableBritdayDateText_2</zorder>
@@ -1736,8 +1650,8 @@ color: #605E5E;</string>
     <addaction name="separator"/>
     <addaction name="actionNew_Member"/>
     <addaction name="actionEdit_Existing_Member"/>
-    <addaction name="actionLoad_Members"/>
     <addaction name="actionSave_Members"/>
+    <addaction name="actionLoad_Members"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuBooks">

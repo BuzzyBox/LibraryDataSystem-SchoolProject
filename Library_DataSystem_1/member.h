@@ -21,7 +21,7 @@ private:
 public:
 
     Member(QString mebName, QString mebUsername, QString mebPassword,
-           QString mebEmail, QString mebAddress, QString birthDate, QString mebGender,  QString phoneNum,
+           QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
            QString ranNo);
 
     //Setters

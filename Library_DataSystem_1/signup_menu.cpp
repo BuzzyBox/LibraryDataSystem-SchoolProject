@@ -48,17 +48,17 @@ void signup_menu::comfirmMember()
     QString mebUser = ui->txtSignUpUsername->text();
     QString mebPass = ui->txtSignUpPassword->text();
     QString mebEmail = ui->txtSignUpEmail->text();
-    QString mebAd = ui->txtSignUpAddress->text();
     QString mebBD = ui->SUSelectDate->text();
-    QString mebPh = ui->txtSignUpPh->text();
     QString mebGen = ui->cBxGender->currentText();
-    int ranNum = QRandomGenerator::global()->bounded(1000, 5000);
+    QString mebAd = ui->txtSignUpAddress->text();
+    QString mebPh = ui->txtSignUpPh->text();
+    int ranNum = QRandomGenerator::global()->bounded(1000, 10000);
     QString ranString = QString::number(ranNum);
 
 
     if(mebName.trimmed() != "" && mebUser.trimmed() != "" && mebPass.trimmed() != "" && mebEmail.trimmed() !="" && mebAd.trimmed() !="")
     {
-        *newMeb = new Member(mebName, mebUser, mebPass, mebEmail, mebAd, mebBD, mebGen, mebPh, ranString);
+        *newMeb = new Member(mebName, mebUser, mebPass, mebEmail, mebBD, mebGen, mebAd, mebPh, ranString);
          this->close();
 
     }

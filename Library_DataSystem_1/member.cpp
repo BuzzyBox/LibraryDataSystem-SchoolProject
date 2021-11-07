@@ -1,16 +1,16 @@
 #include "member.h"
 
-Member:: Member(QString mebName, QString mebUsername, QString mebPassword,
-                QString mebEmail, QString mebAddress, QString birthDate, QString mebGender,  QString phoneNum,
-                QString ranNo) //
+Member::Member(QString mebName, QString mebUsername, QString mebPassword,
+                  QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
+                  QString ranNo) //
 {
     this->mebName = mebName;
     this->mebUsername = mebUsername;
     this->mebPassword = mebPassword;
-    this->birthDate = birthDate;
     this->mebEmail = mebEmail;
-    this->mebAddress = mebAddress;
+    this->birthDate = birthDate;
     this->mebGender = mebGender;
+    this->mebAddress = mebAddress;
     this->phoneNum = phoneNum;
     this->ranNo = ranNo;
 
