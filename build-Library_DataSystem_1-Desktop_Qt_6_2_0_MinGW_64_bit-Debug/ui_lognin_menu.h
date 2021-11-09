@@ -207,6 +207,7 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #868181;"));
+        txtPassword->setEchoMode(QLineEdit::Password);
 
         retranslateUi(lognin_menu);
 

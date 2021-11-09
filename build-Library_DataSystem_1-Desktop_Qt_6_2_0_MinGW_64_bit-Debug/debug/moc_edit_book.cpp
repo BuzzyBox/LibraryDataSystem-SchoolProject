@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Labrary_project6/Labrary_System_Project 6/Library_DataSystem_1/edit_book.h"
+#include "../../Library_DataSystem_1/edit_book.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

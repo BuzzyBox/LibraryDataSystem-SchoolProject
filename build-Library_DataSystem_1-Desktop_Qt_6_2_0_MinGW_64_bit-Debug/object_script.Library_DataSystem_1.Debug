@@ -1,5 +1,7 @@
 debug/add_newbook.o
 debug/book.o
+debug/book_report.o
+debug/edit_book.o
 debug/edit_memeber.o
 debug/lognin_menu.o
 debug/main.o
@@ -8,6 +10,8 @@ debug/member.o
 debug/signup_menu.o
 debug/welcome_screen.o
 debug/moc_add_newbook.o
+debug/moc_book_report.o
+debug/moc_edit_book.o
 debug/moc_edit_memeber.o
 debug/moc_lognin_menu.o
 debug/moc_mainwindow.o

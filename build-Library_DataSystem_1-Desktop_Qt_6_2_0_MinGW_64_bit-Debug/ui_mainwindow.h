@@ -65,19 +65,22 @@ public:
     QLabel *labelUserNameText;
     QLabel *labelMemberNameTxt;
     QLabel *lableMemberAddressText;
-    QLabel *labelBooksOutText;
     QLabel *labelFeesText;
     QLabel *lbUName;
     QLabel *lbmebName;
     QLabel *lbmebBirthdate;
     QLabel *lbmebEmail;
     QLabel *lbmebPhone;
-    QLabel *lbmebNoBooks;
     QLabel *lbmebFees;
     QLabel *lbGen;
     QLabel *labelMemberGenderText;
     QLabel *lableBritdayDateText_2;
     QLabel *lbmebAdd;
+    QLabel *lbGenreTxt;
+    QLabel *labelGenre;
+    QPushButton *pbRefresh;
+    QPushButton *pushButton;
+    QPushButton *pbRefreshM;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuBooks;
@@ -475,7 +478,7 @@ public:
         lbIDNum->setMargin(3);
         lbAvailability = new QLabel(centralwidget);
         lbAvailability->setObjectName(QString::fromUtf8("lbAvailability"));
-        lbAvailability->setGeometry(QRect(269, 501, 381, 21));
+        lbAvailability->setGeometry(QRect(269, 501, 111, 21));
         lbAvailability->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -732,28 +735,6 @@ public:
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
         lableMemberAddressText->setAlignment(Qt::AlignCenter);
-        labelBooksOutText = new QLabel(centralwidget);
-        labelBooksOutText->setObjectName(QString::fromUtf8("labelBooksOutText"));
-        labelBooksOutText->setGeometry(QRect(1294, 430, 91, 22));
-        labelBooksOutText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 104px;\n"
-"height: 28px;\n"
-"left: 65px;\n"
-"top: 136px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 18px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"text-align: center;\n"
-"letter-spacing: -0.408px;"));
-        labelBooksOutText->setAlignment(Qt::AlignCenter);
         labelFeesText = new QLabel(centralwidget);
         labelFeesText->setObjectName(QString::fromUtf8("labelFeesText"));
         labelFeesText->setGeometry(QRect(1294, 483, 91, 22));
@@ -846,7 +827,7 @@ public:
         lbmebName->setMargin(3);
         lbmebBirthdate = new QLabel(centralwidget);
         lbmebBirthdate->setObjectName(QString::fromUtf8("lbmebBirthdate"));
-        lbmebBirthdate->setGeometry(QRect(1390, 400, 141, 21));
+        lbmebBirthdate->setGeometry(QRect(1390, 430, 141, 21));
         lbmebBirthdate->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -946,41 +927,6 @@ public:
 "\n"
 "color: #605E5E;"));
         lbmebPhone->setMargin(3);
-        lbmebNoBooks = new QLabel(centralwidget);
-        lbmebNoBooks->setObjectName(QString::fromUtf8("lbmebNoBooks"));
-        lbmebNoBooks->setGeometry(QRect(1390, 431, 141, 41));
-        lbmebNoBooks->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 5px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 14px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #605E5E;"));
-        lbmebNoBooks->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        lbmebNoBooks->setMargin(3);
         lbmebFees = new QLabel(centralwidget);
         lbmebFees->setObjectName(QString::fromUtf8("lbmebFees"));
         lbmebFees->setGeometry(QRect(1390, 482, 141, 41));
@@ -1074,7 +1020,7 @@ public:
         labelMemberGenderText->setAlignment(Qt::AlignCenter);
         lableBritdayDateText_2 = new QLabel(centralwidget);
         lableBritdayDateText_2->setObjectName(QString::fromUtf8("lableBritdayDateText_2"));
-        lableBritdayDateText_2->setGeometry(QRect(1293, 400, 91, 22));
+        lableBritdayDateText_2->setGeometry(QRect(1293, 430, 91, 22));
         lableBritdayDateText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -1128,6 +1074,145 @@ public:
 "\n"
 "color: #605E5E;"));
         lbmebAdd->setMargin(3);
+        lbGenreTxt = new QLabel(centralwidget);
+        lbGenreTxt->setObjectName(QString::fromUtf8("lbGenreTxt"));
+        lbGenreTxt->setGeometry(QRect(510, 500, 141, 20));
+        lbGenreTxt->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;\n"
+""));
+        labelGenre = new QLabel(centralwidget);
+        labelGenre->setObjectName(QString::fromUtf8("labelGenre"));
+        labelGenre->setGeometry(QRect(430, 500, 91, 22));
+        labelGenre->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelGenre->setAlignment(Qt::AlignCenter);
+        pbRefresh = new QPushButton(centralwidget);
+        pbRefresh->setObjectName(QString::fromUtf8("pbRefresh"));
+        pbRefresh->setGeometry(QRect(520, 300, 61, 41));
+        pbRefresh->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #C4C4C4;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(550, 72, 320, 41));
+        QFont font;
+        font.setPointSize(24);
+        font.setBold(true);
+        pushButton->setFont(font);
+        pushButton->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+"\n"
+"position: absolute;\n"
+"width: 328.88px;\n"
+"height: 258.34px;\n"
+"left: 25.53px;\n"
+"top: 154.21px;\n"
+"\n"
+"background: #A7BFB1;\n"
+"border-radius: 10px;"));
+        pbRefreshM = new QPushButton(centralwidget);
+        pbRefreshM->setObjectName(QString::fromUtf8("pbRefreshM"));
+        pbRefreshM->setGeometry(QRect(1400, 300, 61, 41));
+        pbRefreshM->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #C4C4C4;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
         MainWindow->setCentralWidget(centralwidget);
         labBorder2->raise();
         labBorder1->raise();
@@ -1157,19 +1242,22 @@ public:
         labelUserNameText->raise();
         labelMemberNameTxt->raise();
         lableMemberAddressText->raise();
-        labelBooksOutText->raise();
         labelFeesText->raise();
         lbUName->raise();
         lbmebName->raise();
         lbmebBirthdate->raise();
         lbmebEmail->raise();
         lbmebPhone->raise();
-        lbmebNoBooks->raise();
         lbmebFees->raise();
         lbGen->raise();
         labelMemberGenderText->raise();
         lableBritdayDateText_2->raise();
         lbmebAdd->raise();
+        lbGenreTxt->raise();
+        labelGenre->raise();
+        pbRefresh->raise();
+        pushButton->raise();
+        pbRefreshM->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1600, 21));
@@ -1238,19 +1326,22 @@ public:
         labelUserNameText->setText(QCoreApplication::translate("MainWindow", "Username:", nullptr));
         labelMemberNameTxt->setText(QCoreApplication::translate("MainWindow", "Name:", nullptr));
         lableMemberAddressText->setText(QCoreApplication::translate("MainWindow", "Address:", nullptr));
-        labelBooksOutText->setText(QCoreApplication::translate("MainWindow", "Books Out:", nullptr));
         labelFeesText->setText(QCoreApplication::translate("MainWindow", "Book Fees:", nullptr));
         lbUName->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
         lbmebName->setText(QCoreApplication::translate("MainWindow", "Member's Name", nullptr));
         lbmebBirthdate->setText(QCoreApplication::translate("MainWindow", "Date of Birth", nullptr));
         lbmebEmail->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         lbmebPhone->setText(QCoreApplication::translate("MainWindow", "Phone Number", nullptr));
-        lbmebNoBooks->setText(QCoreApplication::translate("MainWindow", "Num of Books", nullptr));
         lbmebFees->setText(QCoreApplication::translate("MainWindow", "$", nullptr));
         lbGen->setText(QCoreApplication::translate("MainWindow", "Gender", nullptr));
         labelMemberGenderText->setText(QCoreApplication::translate("MainWindow", "Gender:", nullptr));
         lableBritdayDateText_2->setText(QCoreApplication::translate("MainWindow", "Birth Date:", nullptr));
         lbmebAdd->setText(QCoreApplication::translate("MainWindow", "Address", nullptr));
+        lbGenreTxt->setText(QCoreApplication::translate("MainWindow", "Genre", nullptr));
+        labelGenre->setText(QCoreApplication::translate("MainWindow", "Genre:", nullptr));
+        pbRefresh->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Loan", nullptr));
+        pbRefreshM->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "Members", nullptr));
         menuBooks->setTitle(QCoreApplication::translate("MainWindow", "Books", nullptr));
     } // retranslateUi

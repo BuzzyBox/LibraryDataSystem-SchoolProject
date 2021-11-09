@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Library_project pt1/Labrary_System_Project 7/Library_DataSystem_1/lognin_menu.h"
+#include "../../Library_DataSystem_1/lognin_menu.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

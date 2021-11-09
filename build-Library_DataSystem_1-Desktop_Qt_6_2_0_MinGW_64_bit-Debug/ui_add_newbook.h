@@ -18,7 +18,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -38,10 +37,13 @@ public:
     QLabel *labelNewGenresText;
     QComboBox *cBxGenres;
     QLabel *labelNewBookDesText;
-    QTextEdit *txtBookDescription;
     QSpinBox *sBNumberofBooks;
     QLabel *labelNoOfBookText;
     QPushButton *btnEntrNewBook;
+    QLabel *labelNewBookDesText_2;
+    QLabel *imageBox01;
+    QPushButton *btnAddImage;
+    QLineEdit *txtDescription;
 
     void setupUi(QDialog *add_newbook)
     {
@@ -380,39 +382,6 @@ public:
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
         labelNewBookDesText->setAlignment(Qt::AlignCenter);
-        txtBookDescription = new QTextEdit(add_newbook);
-        txtBookDescription->setObjectName(QString::fromUtf8("txtBookDescription"));
-        txtBookDescription->setGeometry(QRect(185, 270, 561, 161));
-        txtBookDescription->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 8px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 18px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #868181;"));
         sBNumberofBooks = new QSpinBox(add_newbook);
         sBNumberofBooks->setObjectName(QString::fromUtf8("sBNumberofBooks"));
         sBNumberofBooks->setGeometry(QRect(165, 450, 581, 31));
@@ -496,6 +465,127 @@ public:
 "/* or 92% */\n"
 "\n"
 "letter-spacing: -0.408px;"));
+        labelNewBookDesText_2 = new QLabel(add_newbook);
+        labelNewBookDesText_2->setObjectName(QString::fromUtf8("labelNewBookDesText_2"));
+        labelNewBookDesText_2->setGeometry(QRect(470, 270, 151, 31));
+        labelNewBookDesText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelNewBookDesText_2->setAlignment(Qt::AlignCenter);
+        imageBox01 = new QLabel(add_newbook);
+        imageBox01->setObjectName(QString::fromUtf8("imageBox01"));
+        imageBox01->setGeometry(QRect(610, 270, 131, 161));
+        imageBox01->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;"));
+        btnAddImage = new QPushButton(add_newbook);
+        btnAddImage->setObjectName(QString::fromUtf8("btnAddImage"));
+        btnAddImage->setGeometry(QRect(504, 310, 81, 23));
+        btnAddImage->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 12px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+""));
+        txtDescription = new QLineEdit(add_newbook);
+        txtDescription->setObjectName(QString::fromUtf8("txtDescription"));
+        txtDescription->setGeometry(QRect(180, 270, 301, 151));
+        txtDescription->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;"));
 
         retranslateUi(add_newbook);
 
@@ -518,6 +608,9 @@ public:
         labelNewBookDesText->setText(QCoreApplication::translate("add_newbook", "Book Description:", nullptr));
         labelNoOfBookText->setText(QCoreApplication::translate("add_newbook", "No of Books:", nullptr));
         btnEntrNewBook->setText(QCoreApplication::translate("add_newbook", "Enter", nullptr));
+        labelNewBookDesText_2->setText(QCoreApplication::translate("add_newbook", "Cover Image:", nullptr));
+        imageBox01->setText(QString());
+        btnAddImage->setText(QCoreApplication::translate("add_newbook", "Add Image", nullptr));
     } // retranslateUi
 
 };

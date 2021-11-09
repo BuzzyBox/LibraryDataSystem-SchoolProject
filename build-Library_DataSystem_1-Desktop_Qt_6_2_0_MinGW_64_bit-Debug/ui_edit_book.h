@@ -18,7 +18,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -34,16 +33,19 @@ public:
     QLabel *labelEdNoOfBookText;
     QLabel *labelEdPublishDateText;
     QLabel *labelEdIDNumText;
-    QLineEdit *txtEditA;
+    QLineEdit *leAuthor;
     QPushButton *btnSaveEditBook;
     QSpinBox *sBEditNB;
     QComboBox *cBgenre;
     QDateEdit *dEeditPD;
-    QLineEdit *txtEditBT;
-    QLineEdit *txtEditIDno;
-    QTextEdit *txtEditBD;
+    QLineEdit *leTitle;
+    QLineEdit *leID;
     QLabel *lblAvail;
     QComboBox *cBavailability;
+    QLineEdit *leDescription;
+    QLabel *imageBox;
+    QLabel *labelEdBookDesText_2;
+    QPushButton *bpLoadImage;
 
     void setupUi(QDialog *edit_book)
     {
@@ -238,11 +240,11 @@ public:
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
         labelEdIDNumText->setAlignment(Qt::AlignCenter);
-        txtEditA = new QLineEdit(edit_book);
-        txtEditA->setObjectName(QString::fromUtf8("txtEditA"));
-        txtEditA->setGeometry(QRect(105, 135, 641, 31));
-        txtEditA->setToolTipDuration(-1);
-        txtEditA->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        leAuthor = new QLineEdit(edit_book);
+        leAuthor->setObjectName(QString::fromUtf8("leAuthor"));
+        leAuthor->setGeometry(QRect(105, 135, 641, 31));
+        leAuthor->setToolTipDuration(-1);
+        leAuthor->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -305,7 +307,7 @@ public:
 "letter-spacing: -0.408px;"));
         sBEditNB = new QSpinBox(edit_book);
         sBEditNB->setObjectName(QString::fromUtf8("sBEditNB"));
-        sBEditNB->setGeometry(QRect(170, 400, 581, 31));
+        sBEditNB->setGeometry(QRect(170, 400, 401, 31));
         sBEditNB->setStyleSheet(QString::fromUtf8("/*boader Date*/\n"
 "position: absolute;\n"
 "width: 156px;\n"
@@ -395,11 +397,11 @@ public:
 "\n"
 "color: #868181;"));
         dEeditPD->setAlignment(Qt::AlignCenter);
-        txtEditBT = new QLineEdit(edit_book);
-        txtEditBT->setObjectName(QString::fromUtf8("txtEditBT"));
-        txtEditBT->setGeometry(QRect(85, 90, 661, 31));
-        txtEditBT->setToolTipDuration(-1);
-        txtEditBT->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        leTitle = new QLineEdit(edit_book);
+        leTitle->setObjectName(QString::fromUtf8("leTitle"));
+        leTitle->setGeometry(QRect(85, 90, 661, 31));
+        leTitle->setToolTipDuration(-1);
+        leTitle->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -430,11 +432,11 @@ public:
 "\n"
 "color: #868181;\n"
 ""));
-        txtEditIDno = new QLineEdit(edit_book);
-        txtEditIDno->setObjectName(QString::fromUtf8("txtEditIDno"));
-        txtEditIDno->setGeometry(QRect(105, 180, 311, 31));
-        txtEditIDno->setToolTipDuration(-1);
-        txtEditIDno->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        leID = new QLineEdit(edit_book);
+        leID->setObjectName(QString::fromUtf8("leID"));
+        leID->setGeometry(QRect(105, 180, 311, 31));
+        leID->setToolTipDuration(-1);
+        leID->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -465,39 +467,6 @@ public:
 "\n"
 "color: #868181;\n"
 ""));
-        txtEditBD = new QTextEdit(edit_book);
-        txtEditBD->setObjectName(QString::fromUtf8("txtEditBD"));
-        txtEditBD->setGeometry(QRect(185, 270, 561, 111));
-        txtEditBD->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 8px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 18px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #868181;"));
         lblAvail = new QLabel(edit_book);
         lblAvail->setObjectName(QString::fromUtf8("lblAvail"));
         lblAvail->setGeometry(QRect(50, 450, 121, 31));
@@ -523,6 +492,132 @@ public:
         cBavailability = new QComboBox(edit_book);
         cBavailability->setObjectName(QString::fromUtf8("cBavailability"));
         cBavailability->setGeometry(QRect(160, 460, 201, 22));
+        leDescription = new QLineEdit(edit_book);
+        leDescription->setObjectName(QString::fromUtf8("leDescription"));
+        leDescription->setGeometry(QRect(180, 270, 241, 121));
+        leDescription->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;\n"
+""));
+        imageBox = new QLabel(edit_book);
+        imageBox->setObjectName(QString::fromUtf8("imageBox"));
+        imageBox->setGeometry(QRect(590, 270, 151, 191));
+        imageBox->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;\n"
+""));
+        labelEdBookDesText_2 = new QLabel(edit_book);
+        labelEdBookDesText_2->setObjectName(QString::fromUtf8("labelEdBookDesText_2"));
+        labelEdBookDesText_2->setGeometry(QRect(450, 270, 151, 31));
+        labelEdBookDesText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelEdBookDesText_2->setAlignment(Qt::AlignCenter);
+        bpLoadImage = new QPushButton(edit_book);
+        bpLoadImage->setObjectName(QString::fromUtf8("bpLoadImage"));
+        bpLoadImage->setGeometry(QRect(470, 310, 91, 31));
+        bpLoadImage->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 12px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"\n"
+";\n"
+"\n"
+""));
 
         retranslateUi(edit_book);
 
@@ -541,11 +636,14 @@ public:
         labelEdNoOfBookText->setText(QCoreApplication::translate("edit_book", "No of Books:", nullptr));
         labelEdPublishDateText->setText(QCoreApplication::translate("edit_book", "Publish Date:", nullptr));
         labelEdIDNumText->setText(QCoreApplication::translate("edit_book", "ID No: ", nullptr));
-        txtEditA->setText(QString());
+        leAuthor->setText(QString());
         btnSaveEditBook->setText(QCoreApplication::translate("edit_book", "Save", nullptr));
-        txtEditBT->setText(QString());
-        txtEditIDno->setText(QString());
+        leTitle->setText(QString());
+        leID->setText(QString());
         lblAvail->setText(QCoreApplication::translate("edit_book", "Availability: ", nullptr));
+        imageBox->setText(QString());
+        labelEdBookDesText_2->setText(QCoreApplication::translate("edit_book", "Update Cover:", nullptr));
+        bpLoadImage->setText(QCoreApplication::translate("edit_book", "Upload Image", nullptr));
     } // retranslateUi
 
 };
