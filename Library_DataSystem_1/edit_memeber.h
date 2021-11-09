@@ -17,6 +17,7 @@ public:
     ~edit_memeber();
 
     void comfirmMebUpdate();
+    void editGender();
 
 
 

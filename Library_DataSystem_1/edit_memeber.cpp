@@ -11,23 +11,24 @@ edit_memeber::edit_memeber(Member* currentMeb, QWidget *parent) :
     ui->setupUi(this);
     this->currentMeb = currentMeb;
 
-    //Adding Gender list
-
-//    list.push_back("Male");
-//    list.push_back("Female");
-//    list.push_back("Nonbinary");
-//    list.push_back("Other");
-
-//    //View Gender list
-
-//    ui->cBxEdGen->addItems(list);
-
-
     //Editing Members' details
 
 
     if(currentMeb != nullptr)
     {
+        //Adding Gender list
+
+        list.push_back("Male");
+        list.push_back("Female");
+        list.push_back("Nonbinary");
+        list.push_back("Other");
+
+        //View Gender list
+
+        ui->cBxEdGen->addItems(list);
+
+
+
         ui->txtEditNam->setText(currentMeb->getMebName());
         ui->txtEditUser->setText(currentMeb->getUserName());
         ui->txtEditPass->setText(currentMeb->getMebPass());
@@ -37,6 +38,7 @@ edit_memeber::edit_memeber(Member* currentMeb, QWidget *parent) :
         ui->cBxEdGen->setCurrentText(currentMeb->getMebGen());
         ui->txtEdAdd->setText(currentMeb->getMebAddress());
         ui->txtEdPhNo->setText(currentMeb->getMebPh());
+
 
     }
 

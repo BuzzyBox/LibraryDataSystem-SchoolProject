@@ -1,8 +1,9 @@
 #include "member.h"
 
 Member::Member(QString mebName, QString mebUsername, QString mebPassword,
-                  QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
-                  QString ranNo) //
+               QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
+               QString ranNo, QString loan1, QString loan2, QString loan3, QString return1, QString return2,
+               QString return3) //
 {
     this->mebName = mebName;
     this->mebUsername = mebUsername;
@@ -13,6 +14,12 @@ Member::Member(QString mebName, QString mebUsername, QString mebPassword,
     this->mebAddress = mebAddress;
     this->phoneNum = phoneNum;
     this->ranNo = ranNo;
+    this->loan1 = loan1;
+    this->loan2 = loan2;
+    this->loan3 = loan3;
+    this->return1 = return1;
+    this->return2 = return2;
+    this->return3 = return3;
 
 }
 
@@ -57,6 +64,32 @@ void Member::setRandomNo(QString ranNo)
     this->ranNo = ranNo;
 }
 
+void Member::setLoan1(QString loan1)
+{
+    this->loan1 = loan1;
+}
+void Member::setLoan2(QString loan2)
+{
+    this->loan2 = loan2;
+}
+void Member::setLoan3(QString loan3)
+{
+    this->loan3 = loan3;
+}
+void Member::setReturn1(QString return1)
+{
+    this->return1 = return1;
+}
+void Member::setReturn2(QString return2)
+{
+    this->return2 = return2;
+}
+void Member::setReturn3(QString return3)
+{
+    this->return3 = return3;
+}
+
+
 //Getters
 
 QString Member::getMebName() const
@@ -94,4 +127,28 @@ QString Member::getMebPh() const
 QString Member::getRandomNo() const
 {
     return ranNo;
+}
+QString Member:: getLoan1() const
+{
+    return loan1;
+}
+QString Member::getLoan2() const
+{
+    return loan2;
+}
+QString Member::getLoan3() const
+{
+    return loan3;
+}
+QString Member::getReturn1() const
+{
+    return return1;
+}
+QString Member::getReturn2() const
+{
+    return return2;
+}
+QString Member::getReturn3() const
+{
+    return return3;
 }

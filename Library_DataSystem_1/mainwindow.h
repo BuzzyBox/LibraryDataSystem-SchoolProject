@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "signup_menu.h"
 #include "member.h"
+#include "add_newbook.h"
+#include  "book.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +30,16 @@ public:
     void exitApp();
     void searchMemberDetials();
 
+   //Book
+     void newBookOption();
+     void whenBookClicked();
+     void whenBookSaved();
+     void bookLoaded();
+     void editBookOption();
+     void searchBook();
+     void refreshListB();
+     void refreshListM();
+
 
 
 private slots:
@@ -37,5 +49,7 @@ private:
     QVector<Member*> itemMebs;
     Ui::MainWindow *ui;
     //signup_menu *signUp;
+
+     QVector<Book*> bookList;
 };
 #endif // MAINWINDOW_H

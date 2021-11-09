@@ -17,12 +17,19 @@ private:
     QString phoneNum;
     QString numOfChildren;
     QString ranNo;
+    QString loan1;
+    QString loan2;
+    QString loan3;
+    QString return1;
+    QString return2;
+    QString return3;
 
 public:
 
     Member(QString mebName, QString mebUsername, QString mebPassword,
            QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
-           QString ranNo);
+           QString ranNo, QString loan1, QString loan2, QString loan3, QString return1, QString return2,
+           QString return3);
 
     //Setters
 
@@ -35,11 +42,17 @@ public:
     void setMebGen(QString mebGender);
     void setMebPh(QString phoneNum);
 
-
     //Random Setter
 
     void setRandomNo(QString ranNo);
 
+    //Loans and returns Setters
+    void setLoan1(QString loan1);
+    void setLoan2(QString loan2);
+    void setLoan3(QString loan3);
+    void setReturn1(QString return1);
+    void setReturn2(QString return2);
+    void setReturn3(QString return3);
 
 
     //Getters
@@ -57,7 +70,18 @@ public:
 
     QString getRandomNo() const;
 
+    //Loan and Return Getters
+
+    QString getLoan1() const;
+    QString getLoan2() const;
+    QString getLoan3() const;
+    QString getReturn1() const;
+    QString getReturn2() const;
+    QString getReturn3() const;
+
+
 
 };
 
 #endif // MEMBER_H
+

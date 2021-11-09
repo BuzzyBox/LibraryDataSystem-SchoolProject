@@ -11,6 +11,8 @@ CONFIG += c++11
 SOURCES += \
     add_newbook.cpp \
     book.cpp \
+    book_report.cpp \
+    edit_book.cpp \
     edit_memeber.cpp \
     lognin_menu.cpp \
     main.cpp \
@@ -22,6 +24,8 @@ SOURCES += \
 HEADERS += \
     add_newbook.h \
     book.h \
+    book_report.h \
+    edit_book.h \
     edit_memeber.h \
     lognin_menu.h \
     mainwindow.h \
@@ -31,6 +35,8 @@ HEADERS += \
 
 FORMS += \
     add_newbook.ui \
+    book_report.ui \
+    edit_book.ui \
     edit_memeber.ui \
     lognin_menu.ui \
     mainwindow.ui \

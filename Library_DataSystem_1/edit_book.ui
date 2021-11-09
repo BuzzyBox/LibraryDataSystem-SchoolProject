@@ -220,8 +220,8 @@ letter-spacing: -0.408px;</string>
   <widget class="QLabel" name="labelEdNoOfBookText">
    <property name="geometry">
     <rect>
-     <x>35</x>
-     <y>450</y>
+     <x>40</x>
+     <y>400</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -325,7 +325,7 @@ letter-spacing: -0.408px;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtEditA">
+  <widget class="QLineEdit" name="leAuthor">
    <property name="geometry">
     <rect>
      <x>105</x>
@@ -419,9 +419,9 @@ letter-spacing: -0.408px;</string>
   <widget class="QSpinBox" name="sBEditNB">
    <property name="geometry">
     <rect>
-     <x>165</x>
-     <y>450</y>
-     <width>581</width>
+     <x>170</x>
+     <y>400</y>
+     <width>401</width>
      <height>31</height>
     </rect>
    </property>
@@ -460,7 +460,7 @@ color: #868181;</string>
     <number>1</number>
    </property>
   </widget>
-  <widget class="QComboBox" name="cBxGen">
+  <widget class="QComboBox" name="cBgenre">
    <property name="geometry">
     <rect>
      <x>155</x>
@@ -541,7 +541,7 @@ color: #868181;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtEditBT">
+  <widget class="QLineEdit" name="leTitle">
    <property name="geometry">
     <rect>
      <x>85</x>
@@ -590,7 +590,7 @@ color: #868181;
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtEditIDno">
+  <widget class="QLineEdit" name="leID">
    <property name="geometry">
     <rect>
      <x>105</x>
@@ -639,13 +639,59 @@ color: #868181;
     <string/>
    </property>
   </widget>
-  <widget class="QTextEdit" name="txtEditBD">
+  <widget class="QLabel" name="lblAvail">
    <property name="geometry">
     <rect>
-     <x>185</x>
+     <x>50</x>
+     <y>450</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Availability: </string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cBavailability">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>460</y>
+     <width>201</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leDescription">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
      <y>270</y>
-     <width>561</width>
-     <height>161</height>
+     <width>241</width>
+     <height>121</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -678,7 +724,138 @@ line-height: 22px;
 
 letter-spacing: -0.408px;
 
-color: #868181;</string>
+color: #868181;
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imageBox">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>270</y>
+     <width>151</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEdBookDesText_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>270</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Update Cover:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bpLoadImage">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>310</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+
+;
+
+</string>
+   </property>
+   <property name="text">
+    <string>Upload Image</string>
    </property>
   </widget>
  </widget>

@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "signup_menu.h"
 #include "edit_memeber.h"
+#include "edit_book.h"
 #include <QTextOption>
 #include <QMessageBox>
 #include <QString>
@@ -34,6 +35,12 @@ MainWindow::MainWindow(QWidget *parent)
    connect(ui->actionSave_Members, &QAction::triggered,
            this, &MainWindow::handleSaveMembers);
 
+
+   connect(ui->btnSearchMember, &QPushButton::clicked,
+            this, &MainWindow::searchMemberDetials);
+
+
+
    connect(ui->actionLoad_Members, &QAction::triggered,
            this, &MainWindow::handleLoadMembers);
 
@@ -42,6 +49,32 @@ MainWindow::MainWindow(QWidget *parent)
 
    connect(ui->actionExit, &QAction::triggered,
            this, &MainWindow::exitApp);
+
+   connect(ui->actionAdd_Book, &QAction::triggered,this,&MainWindow::newBookOption);
+     connect(ui->ItemBook, &QListWidget::itemClicked,this,&MainWindow::whenBookClicked);
+     connect(ui->actionSave_Books, &QAction::triggered,this,&MainWindow::whenBookSaved);
+     connect(ui->actionLoad_Books, &QAction::triggered,this,&MainWindow::bookLoaded);
+     connect(ui->actionEdit_Existing_Book, &QAction::triggered,this,&MainWindow::editBookOption);
+     connect(ui->btnSearchBook, &QPushButton::clicked, this, &MainWindow::searchBook);
+      connect(ui->pbRefresh, &QPushButton::clicked, this, &MainWindow::refreshListB);
+      connect(ui->pbRefreshM, &QPushButton::clicked, this, &MainWindow::refreshListM);
+
+
+      bookLoaded();
+      ui->ItemBook->setCurrentRow(0);
+      whenBookClicked();
+
+
+      handleLoadMembers();
+      ui->ItemMember->setCurrentRow(0);
+      handMemberClicked();
+
+      ui->pbRefresh->setHidden(true);
+      ui->pbRefreshM->setHidden(true);
+
+
+
+
 
 
 }
@@ -56,6 +89,14 @@ MainWindow::~MainWindow()
     }
     itemMebs.clear();
     delete ui;
+
+
+    for(int i=0;i<bookList.size();i++)
+     {
+         delete bookList.at(i);
+     }
+     bookList.clear();
+     delete ui;
 
 
 }
@@ -102,6 +143,45 @@ void MainWindow::handMemberClicked()
     }
 
 }
+void MainWindow::searchMemberDetials()
+{
+    QString mebSearch = ui->lEditSearchMember->text();
+
+    if(mebSearch != "")
+    {
+        for(int i = 0; i < ui->ItemMember->count(); i++)
+        {
+            QListWidgetItem* item = ui->ItemMember->item(i);
+            item->setHidden(true);
+        }
+
+      QList<QListWidgetItem* > mebList = ui->ItemMember->findItems(mebSearch, Qt::MatchContains);
+
+      for(int i = 0; i < mebList.count(); i++)
+      {
+          QListWidgetItem* item = mebList.at(i);
+          item->setHidden(false);
+      }
+
+    }
+    else
+    {
+        for(int i = 0; i < ui->ItemMember->count(); i++)
+        {
+            QListWidgetItem* item = ui->ItemMember->item(i);
+            item->setHidden(false);
+        }
+    }
+
+}
+void MainWindow::refreshListM()
+{
+    for(int i=0;i<ui->ItemMember->count(); i++)
+    {
+        QListWidgetItem* item=ui->ItemMember->item(i);
+        item->setHidden(false);
+    }
+}
 
 void MainWindow::handMemberEdited()
 {
@@ -144,19 +224,6 @@ void MainWindow::handleSaveMembers()
     QTextStream out(&outputFileMember);
 
 
-//    for (int i = 0; i < itemMebs.size(); i++)
-//    {
-//                out<< itemMebs.at(i)->getMebName()<<",";
-//                out<< itemMebs.at(i)->getUserName()<<",";
-//                out<< itemMebs.at(i)->getMebPass()<<",";
-//                out<< itemMebs.at(i)->getMebEmail()<<",";
-//                out<< itemMebs.at(i)->getMebBirthday()<<",";
-//                out<< itemMebs.at(i)->getMebGen()<<",";
-//                out<< itemMebs.at(i)->getMebAddress()<<",";
-//                out<< itemMebs.at(i)->getMebPh()<<",";
-//                out<< itemMebs.at(i)->getRandomNo()<<"\n";
-//    }
-
 
     for(Member* listMember:itemMebs)
     {
@@ -169,12 +236,18 @@ void MainWindow::handleSaveMembers()
         out<< listMember->getMebGen()<<",";
         out<< listMember->getMebAddress()<<",";
         out<< listMember->getMebPh()<<",";
-        out<< listMember->getRandomNo()<<"\n";
+        out<< listMember->getRandomNo()<<",";
+        out<< listMember->getLoan1()<<",";
+        out<< listMember->getLoan2()<<",";
+        out<< listMember->getLoan3()<<",";
+        out<< listMember->getReturn1()<<",";
+        out<< listMember->getReturn2()<<",";
+        out<< listMember->getReturn3()<<"\n";
 
     }
 
-//    out.flush();
-//    outputFileMember.close();
+    out.flush();
+    outputFileMember.close();
 
  }
 
@@ -204,7 +277,8 @@ void MainWindow::handleLoadMembers()
         ui->ItemMember->addItem("ID : "+info.at(8)+ "                    Member : "+ info.at(0));
 
         Member* temp = new Member(info.at(0), info.at(1), info.at(2), info.at(3),
-                                     info.at(4), info.at(5), info.at(6), info.at(7), info.at(8));
+                                     info.at(4), info.at(5), info.at(6), info.at(7), info.at(8),info.at(9),info.at(10)
+                                  ,info.at(11),info.at(12),info.at(13),info.at(14));
 
         itemMebs.push_back(temp);
 
@@ -214,6 +288,165 @@ void MainWindow::handleLoadMembers()
     inputFileMember.close();
 
 }
+void MainWindow::newBookOption()
+{
+    Book*newBook=nullptr;
+    add_newbook addNewBook(newBook,nullptr);
+    addNewBook.setModal(true);
+    addNewBook.exec();
+
+    if(newBook!=nullptr)
+    {
+        bookList.push_back(newBook);
+
+        ui->ItemBook->addItem(newBook->getTitle()+ "               "+newBook->getbookID() );
+    }
+}
+void MainWindow::editBookOption()
+{
+    int index=ui->ItemBook->currentRow();
+    if(index!=-1)
+    {
+        Book* currentBook=bookList.at(index);
+        if(currentBook!=nullptr)
+        {
+            edit_book editBook(currentBook, nullptr);
+            editBook.exec();
+            ui->lbTitle->setText(currentBook->getTitle());
+
+            ui->lbAuthor->setText(currentBook->getAuthor());
+
+            ui->lbDate->setText(currentBook->getDatePublished());
+
+            ui->lbIDNum->setText(currentBook->getbookID());
+            ui->lbGenreTxt->setText(currentBook->getGenre());
+            ui->lbAvailability->setText(currentBook->getAvail());
+
+            QPixmap pixmap(currentBook->getImageFilePath());
+
+            ui->labBookCover->setPixmap(pixmap);
+
+            ui->labBookCover->setScaledContents(true);
+
+        }
+    }
+    whenBookSaved();
+    bookLoaded();
+}
+
+
+void MainWindow::whenBookClicked()
+{
+    int index=ui->ItemBook->currentRow();
+
+    if(index>=0)
+    {
+        Book*newBook=bookList.at(index);
+
+
+        ui->lbTitle->setText(newBook->getTitle());
+
+        ui->lbAuthor->setText(newBook->getAuthor());
+
+        ui->lbDate->setText(newBook->getDatePublished());
+
+        ui->lbIDNum->setText(newBook->getbookID());
+        ui->lbGenreTxt->setText(newBook->getGenre());
+        ui->lbAvailability->setText(newBook->getAvail());
+
+        QPixmap pixmap(newBook->getImageFilePath());
+
+        ui->labBookCover->setPixmap(pixmap);
+
+        ui->labBookCover->setScaledContents(true);
+
+    }
+}
+void MainWindow::whenBookSaved()
+{
+    QFile outputFileBook("book.txt");
+    outputFileBook.open(QIODevice::WriteOnly|QIODevice::Text);
+    QTextStream out(&outputFileBook);
+    for(int i=0;i<bookList.size();i++)
+    {
+        out<<bookList.at(i)->getTitle()<<",";
+        out<<bookList.at(i)->getbookID()<<",";
+        out<<bookList.at(i)->getAuthor()<<",";
+        out<<bookList.at(i)->getDatePublished()<<",";
+        out<<bookList.at(i)->getDescription()<<",";
+        out<<bookList.at(i)->getNumCopy()<<",";
+        out<<bookList.at(i)->getGenre()<<",";
+        out<<bookList.at(i)->getAvail()<<",";
+        out<<bookList.at(i)->getImageFilePath()<<"\n";
+
+    }
+    out.flush();
+    outputFileBook.close();
+
+}
+
+void MainWindow::bookLoaded()
+{
+    QFile inputFileBook("book.txt");
+    inputFileBook.open(QIODevice::ReadOnly|QIODevice::Text);
+    QTextStream in(&inputFileBook);
+
+    ui->ItemBook->clear();
+    for(int i=0;i<bookList.size();i++)
+    {
+        delete bookList.at(i);
+    }
+    bookList.clear();
+    while(!in.atEnd())
+    {
+        QString line=in.readLine();
+        QStringList info=line.split(",");
+
+        ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
+        Book* temp=new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8));
+        bookList.push_back(temp);
+    }
+    in.flush();
+    inputFileBook.close();
+}
+void MainWindow::searchBook()
+{
+    QString search=ui->lEditSearchBook1->text();
+    if(search!="")
+    {
+        ui->pbRefresh->setHidden(false);
+        QList<QListWidgetItem*>list=ui->ItemBook->findItems(search,Qt::MatchContains);
+        for(int i=0; i< ui->ItemBook->count();i++)
+        {
+            QListWidgetItem* item=ui->ItemBook->item(i);
+            item->setHidden(true);
+        }
+        for(QListWidgetItem*item:list)
+        {
+            item->setHidden(false);
+        }
+    } else
+    {
+        for(int i=0;i<ui->ItemBook->count(); i++)
+        {
+            QListWidgetItem* item=ui->ItemBook->item(i);
+            item->setHidden(false);
+        }
+    }
+}
+
+
+void MainWindow::refreshListB()
+{
+    for(int i=0;i<ui->ItemBook->count(); i++)
+    {
+        QListWidgetItem* item=ui->ItemBook->item(i);
+        item->setHidden(false);
+    }
+}
+
+
+
 
 void MainWindow::exitApp()
 {
