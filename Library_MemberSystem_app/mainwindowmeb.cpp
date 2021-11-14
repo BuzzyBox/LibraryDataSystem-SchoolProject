@@ -6,7 +6,9 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QStandardPaths>
+#include <QResource>
 #include <QDir>
+#include <QFileDialog>
 
 MainWindowMeb::MainWindowMeb(QWidget *parent)
     : QMainWindow(parent)
@@ -97,10 +99,112 @@ void MainWindowMeb::whenBookClicked()
 void MainWindowMeb::getBookData()
 {
 
+    //C:\Users\Buzzy\Documents\QtCode\build-Library_DataSystem_1-Desktop_Qt_6_2_0_MinGW_64_bit-Debug
 
-    //D:\Users\270121466\Documents\build-Library_DataSystem_1-Desktop_Qt_5_12_11_MinGW_64_bit-Debug
 
-    QString fileBook("D:/Users/270121466/Documents/build-Library_DataSystem_1-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/book.txt");
+
+    QDir Bookdir("C:/Documents");
+
+    QString findbooks;
+
+    findbooks = Bookdir.relativeFilePath("/build-Library_DataSystem_1-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/book.txt");
+
+    QFile loadBook(findbooks);
+
+
+
+
+
+
+
+
+//      QString loadBook;("./book.txt");
+//      QFile loadB(loadBook);
+
+
+
+
+              if(!loadBook.open(QIODevice::ReadOnly|QIODevice::Text))
+              {
+
+                  QMessageBox::warning(this,"BookNook Library", "Cannot find books");
+
+              }
+
+             loadBook.open(QIODevice::ReadOnly|QIODevice::Text);
+             QTextStream in(&loadBook);
+
+
+              ui->ItemBook->clear();
+              for(int i = 0; i < booklist.size(); i++)
+              {
+                  delete booklist.at(i);
+              }
+              booklist.clear();
+
+              while(!in.atEnd())
+              {
+                  QString line = in.readLine();
+                  QStringList info = line.split(",");
+
+                  ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
+                  Book* temp = new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
+                  booklist.push_back(temp);
+
+              }
+
+
+
+              in.flush();
+              loadBook.close();
+
+
+//    QFile bookFile(":/resources/res/book.txt");
+
+
+//        if(!bookFile.open(QIODevice::ReadOnly|QIODevice::Text))
+//        {
+
+//            QMessageBox::warning(this,"BookNook Library", "Cannot find books");
+
+//        }
+
+//        bookFile.open(QIODevice::ReadOnly|QIODevice::Text);
+//        QTextStream in(&bookFile);
+
+
+//        ui->ItemBook->clear();
+//        for(int i = 0; i < booklist.size(); i++)
+//        {
+//            delete booklist.at(i);
+//        }
+//        booklist.clear();
+
+//        while(!in.atEnd())
+//        {
+//            QString line = in.readLine();
+//            QStringList info = line.split(",");
+
+//            ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
+//            Book* temp = new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
+//            booklist.push_back(temp);
+
+//        }
+
+
+
+//        in.flush();
+//        bookFile.close();
+
+
+
+
+
+
+
+//D:\Users\270121466\Documents\build-Library_DataSystem_1-Desktop_Qt_5_12_11_MinGW_64_bit-Debug
+
+//    QString fileBook("book.txt");
 
 
 //    if(!bookFile.open(QIODevice::ReadOnly | QIODevice:: Text))
@@ -108,43 +212,43 @@ void MainWindowMeb::getBookData()
 //        QMessageBox::warning(this,"BookNook Library", "Cannot find books");
 //    }
 
-    if(QFileInfo::exists(fileBook))
-    {
+//    if(QFileInfo::exists(fileBook))
+//    {
 
-        QFile bookFile(fileBook);
-        bookFile.open(QIODevice::ReadOnly|QIODevice::Text);
-        QTextStream in(&bookFile);
-
-
-        ui->ItemBook->clear();
-        for(int i = 0; i < booklist.size(); i++)
-        {
-            delete booklist.at(i);
-        }
-        booklist.clear();
-
-        while(!in.atEnd())
-        {
-            QString line = in.readLine();
-            QStringList info = line.split(",");
-
-            ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
-            Book* temp = new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
-            booklist.push_back(temp);
-
-        }
+//        QFile bookFile(fileBook);
+//        bookFile.open(QIODevice::ReadOnly|QIODevice::Text);
+//        QTextStream in(&bookFile);
 
 
+//        ui->ItemBook->clear();
+//        for(int i = 0; i < booklist.size(); i++)
+//        {
+//            delete booklist.at(i);
+//        }
+//        booklist.clear();
 
-        in.flush();
-        bookFile.close();
+//        while(!in.atEnd())
+//        {
+//            QString line = in.readLine();
+//            QStringList info = line.split(",");
+
+//            ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
+//            Book* temp = new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
+//            booklist.push_back(temp);
+
+//        }
 
 
-    }
-    else
-    {
-         QMessageBox::warning(this,"BookNook Library", "Cannot find books");
-    }
+
+//        in.flush();
+//        bookFile.close();
+
+
+//    }
+//    else
+//    {
+//         QMessageBox::warning(this,"BookNook Library", "Cannot find books");
+//    }
 
 
 }
