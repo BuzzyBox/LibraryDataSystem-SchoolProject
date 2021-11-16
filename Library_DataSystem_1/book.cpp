@@ -2,7 +2,7 @@
 #include <QString>
 
 Book::Book( QString title,QString bookID, QString author, QString datePublish,
-     QString descrip, int numCopy, QString genre, QString availability, QString imageFilePath)
+     QString descrip, int numCopy, QString genre, QString availability, QString dueBack, QString imageFilePath)
 {
     this->bookID=bookID;
     this->title=title;
@@ -13,6 +13,7 @@ Book::Book( QString title,QString bookID, QString author, QString datePublish,
     this->imageFilePath=imageFilePath;
     this->genre=genre;
     this->availability=availability;
+    this->dueBack=dueBack;
 }
 void Book::setbookID(QString bookID)
 {
@@ -51,7 +52,10 @@ void Book::setAvail(QString availability)
 {
     this->availability=availability;
 }
-
+void Book::setDueBack(QString dueBack)
+{
+    this->dueBack=dueBack;
+}
 QString Book::getbookID()
 {
     return bookID;
@@ -88,4 +92,8 @@ QString Book::getAvail()
 {
     return availability;
 
+}
+QString Book::getDueBack()
+{
+    return dueBack;
 }

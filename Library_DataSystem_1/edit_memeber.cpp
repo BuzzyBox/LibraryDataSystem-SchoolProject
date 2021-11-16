@@ -33,8 +33,11 @@ edit_memeber::edit_memeber(Member* currentMeb, QWidget *parent) :
         ui->txtEditUser->setText(currentMeb->getUserName());
         ui->txtEditPass->setText(currentMeb->getMebPass());
         ui->txtEditEmail->setText(currentMeb->getMebEmail());
-        QDate Bdate = QDate::fromString(currentMeb->getMebBirthday());
-        ui->EdtSelectDate->setDate(Bdate);
+        QDate bDate = QDate::currentDate();
+        QString date = bDate.toString();
+        ui->EdtSelectDate->setDate(bDate);
+//        QDate Bdate = QDate::fromString(currentMeb->getMebBirthday());
+//        ui->EdtSelectDate->setDate(Bdate);
         ui->cBxEdGen->setCurrentText(currentMeb->getMebGen());
         ui->txtEdAdd->setText(currentMeb->getMebAddress());
         ui->txtEdPhNo->setText(currentMeb->getMebPh());
@@ -77,6 +80,7 @@ void edit_memeber::comfirmMebUpdate()
         currentMeb->setMebGen(EdtGen);
         currentMeb->setMebAddress(EdtAdd);
         currentMeb->setMebPh(EdtPh);
+
         this->close();
     }
     else

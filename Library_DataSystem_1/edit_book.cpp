@@ -19,9 +19,26 @@ edit_book::edit_book(Book*& currentBook, QWidget *parent) :
       ui->leID->setText(currentBook->getbookID());
       ui->cBavailability->setCurrentText(currentBook->getAvail());
       ui->cBgenre->setCurrentText(currentBook->getGenre());
-     // ui->dEeditPD->setText(newBook->getDatePublished());
-      ui->sBEditNB->setValue(currentBook->getNumCopy());
-      imageFilePath=currentBook->getImageFilePath();
+
+      QString pdate=currentBook->getDatePublished();
+      QDate dateP=QDate::fromString(pdate,"dd/MM/yyyy");
+      ui->dEeditPD->setDate(dateP);
+
+if(currentBook->getDueBack()!="")
+{
+    //This turns string date into Qdate date and displays it
+      QString bdate=currentBook->getDueBack();
+      QDate dateB=QDate::fromString(bdate,"dd/MM/yyyy");
+      ui->dateDue->setDate(dateB);
+
+
+}
+else {
+    QDate DatE= QDate::currentDate();
+    ui->dateDue->setDate(DatE);
+}
+ui->sBEditNB->setValue(currentBook->getNumCopy());
+imageFilePath=currentBook->getImageFilePath();
 
     }
 
@@ -65,6 +82,8 @@ void edit_book::confirmUpdateBook()
     QString bookGenre=ui->cBgenre->currentText();
     QString bookAvail=ui->cBavailability->currentText();
     int bookCopy=ui->sBEditNB->value();
+    QString bookBack=ui->dateDue->text();
+
 
 ;
     if(bookName!="")
@@ -77,6 +96,7 @@ void edit_book::confirmUpdateBook()
       currentBook->setGenre(bookGenre);
       currentBook->setAvail(bookAvail);
     //  currentBook->getImageFilePath(imageFilePath);
+      currentBook->setDueBack(bookBack);
         this->close();
     }
     else

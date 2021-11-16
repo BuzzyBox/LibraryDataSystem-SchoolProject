@@ -40,6 +40,13 @@ public:
      void refreshListB();
      void refreshListM();
 
+//Loaning Books to members
+     void loanOutBook();
+     void returnB01();
+    void returnB02();
+    void returnB03();
+    void bookReport();
+    void bookOverDue();
 
 
 private slots:

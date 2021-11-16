@@ -60,11 +60,12 @@ void add_newbook::loadBook()
     QString bookPublish=ui->dEpublishDate->text();
     QString bookGenre=ui->cBxGenres->currentText();
     QString bookAvail="Available";
+    QString dateBack="";
     int bookCopy=ui->sBNumberofBooks->value();
     if(bookName.trimmed()!="" && bookCopy>=1)
     {
         *newBook=new Book(bookName,bookid,  bookAuthor,
-                          bookPublish, bookDes,bookCopy, bookGenre,bookAvail,imageFilePath);
+                          bookPublish, bookDes,bookCopy, bookGenre,bookAvail,dateBack,imageFilePath);
         this->close();
     }
     else

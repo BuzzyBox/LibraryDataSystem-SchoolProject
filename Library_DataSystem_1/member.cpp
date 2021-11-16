@@ -3,7 +3,7 @@
 Member::Member(QString mebName, QString mebUsername, QString mebPassword,
                QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
                QString ranNo, QString loan1, QString loan2, QString loan3, QString return1, QString return2,
-               QString return3) //
+               QString return3,float fees) //
 {
     this->mebName = mebName;
     this->mebUsername = mebUsername;
@@ -20,6 +20,7 @@ Member::Member(QString mebName, QString mebUsername, QString mebPassword,
     this->return1 = return1;
     this->return2 = return2;
     this->return3 = return3;
+    this->fees=fees;
 
 }
 
@@ -88,6 +89,10 @@ void Member::setReturn3(QString return3)
 {
     this->return3 = return3;
 }
+void Member::setFees(float fees)
+{
+    this->fees=fees;
+}
 
 
 //Getters
@@ -151,4 +156,8 @@ QString Member::getReturn2() const
 QString Member::getReturn3() const
 {
     return return3;
+}
+float Member::getFees() const
+{
+    return fees;
 }

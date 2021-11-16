@@ -3,12 +3,14 @@
 #include "signup_menu.h"
 #include "edit_memeber.h"
 #include "edit_book.h"
+#include "book_report.h"
 #include <QTextOption>
 #include <QMessageBox>
 #include <QString>
 #include <QStringList>
 #include <QFile>
 #include <QTextStream>
+#include <QDir>
 #include <QDate>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -58,6 +60,15 @@ MainWindow::MainWindow(QWidget *parent)
      connect(ui->btnSearchBook, &QPushButton::clicked, this, &MainWindow::searchBook);
       connect(ui->pbRefresh, &QPushButton::clicked, this, &MainWindow::refreshListB);
       connect(ui->pbRefreshM, &QPushButton::clicked, this, &MainWindow::refreshListM);
+
+      connect(ui->pbLoan,&QPushButton::clicked, this, &MainWindow::loanOutBook );
+
+      connect(ui->btnReturn1, &QPushButton::clicked,this,&MainWindow::returnB01);
+      connect(ui->btnReturn2, &QPushButton::clicked,this,&MainWindow::returnB02);
+      connect(ui->btnReturn3, &QPushButton::clicked,this,&MainWindow::returnB03);
+
+       connect(ui->actBR, &QAction::triggered,this,&MainWindow::bookReport);
+        connect(ui->actOverDue, &QAction::triggered,this,&MainWindow::bookOverDue);
 
 
       bookLoaded();
@@ -138,7 +149,14 @@ void MainWindow::handMemberClicked()
       ui->lbGen->setText(theMember->getMebGen());
       ui->lbmebPhone->setText(theMember->getMebPh());
       ui->lbmebAdd->setText(theMember->getMebAddress());
-        }
+      ui->loanBTitle01->setText(theMember->getLoan1());
+      ui->loanBDate01->setText(theMember->getReturn1());
+      ui->loanBTitle02->setText(theMember->getLoan2());
+      ui->loanBDate02->setText(theMember->getReturn2());
+      ui->loanBTitle03->setText(theMember->getLoan3());
+      ui->loanBDate03->setText(theMember->getReturn3());
+       }
+
 
     }
 
@@ -149,6 +167,7 @@ void MainWindow::searchMemberDetials()
 
     if(mebSearch != "")
     {
+        ui->pbRefreshM->setHidden(false);
         for(int i = 0; i < ui->ItemMember->count(); i++)
         {
             QListWidgetItem* item = ui->ItemMember->item(i);
@@ -215,6 +234,43 @@ void MainWindow::handMemberEdited()
 
 void MainWindow::handleSaveMembers()
  {
+    int index = ui->ItemMember->currentRow();
+   Member*theMember=itemMebs.at(index);
+
+
+    QDate curDate=QDate::currentDate();
+
+    QDate f1 = QDate::fromString(theMember->getReturn1());
+    QDate f2 = QDate::fromString(theMember->getReturn2());
+    QDate f3 = QDate::fromString(theMember->getReturn3());
+
+    int fEE1= f1.daysTo(curDate);
+    int fEE2= f2.daysTo(curDate);
+    int fEE3= f3.daysTo(curDate);
+
+
+
+
+   float totalFee=theMember->getFees();
+    if (fEE1 <=0 && fEE2 <=0 && fEE3<=0)
+    {
+        totalFee+=0;
+    }
+    else
+    {
+      totalFee += (fEE1*0.5) + (fEE2*0.5) + (fEE3 + 0.5);
+    }
+
+
+
+
+    theMember->setFees(totalFee);
+
+    QString feeString= QString::number(theMember->getFees());
+
+    ui->lbmebFees->setText(feeString);
+
+
 
     QFile outputFileMember("member.txt");
 
@@ -227,6 +283,8 @@ void MainWindow::handleSaveMembers()
 
     for(Member* listMember:itemMebs)
     {
+
+
 
         out<< listMember->getMebName()<<",";
         out<< listMember->getUserName()<<",";
@@ -242,7 +300,8 @@ void MainWindow::handleSaveMembers()
         out<< listMember->getLoan3()<<",";
         out<< listMember->getReturn1()<<",";
         out<< listMember->getReturn2()<<",";
-        out<< listMember->getReturn3()<<"\n";
+        out<< listMember->getReturn3()<<",";
+        out<<listMember->getFees()<<"\n";
 
     }
 
@@ -278,7 +337,7 @@ void MainWindow::handleLoadMembers()
 
         Member* temp = new Member(info.at(0), info.at(1), info.at(2), info.at(3),
                                      info.at(4), info.at(5), info.at(6), info.at(7), info.at(8),info.at(9),info.at(10)
-                                  ,info.at(11),info.at(12),info.at(13),info.at(14));
+                                  ,info.at(11),info.at(12),info.at(13),info.at(14), info.at(15).toFloat());
 
         itemMebs.push_back(temp);
 
@@ -321,12 +380,14 @@ void MainWindow::editBookOption()
             ui->lbIDNum->setText(currentBook->getbookID());
             ui->lbGenreTxt->setText(currentBook->getGenre());
             ui->lbAvailability->setText(currentBook->getAvail());
+            ui->lbDateBack->setText(currentBook->getDueBack());
 
             QPixmap pixmap(currentBook->getImageFilePath());
 
             ui->labBookCover->setPixmap(pixmap);
 
             ui->labBookCover->setScaledContents(true);
+
 
         }
     }
@@ -353,6 +414,7 @@ void MainWindow::whenBookClicked()
         ui->lbIDNum->setText(newBook->getbookID());
         ui->lbGenreTxt->setText(newBook->getGenre());
         ui->lbAvailability->setText(newBook->getAvail());
+        ui->lbDateBack->setText(newBook->getDueBack());
 
         QPixmap pixmap(newBook->getImageFilePath());
 
@@ -364,30 +426,35 @@ void MainWindow::whenBookClicked()
 }
 void MainWindow::whenBookSaved()
 {
-    QFile outputFileBook("book.txt");
-    outputFileBook.open(QIODevice::WriteOnly|QIODevice::Text);
-    QTextStream out(&outputFileBook);
-    for(int i=0;i<bookList.size();i++)
-    {
-        out<<bookList.at(i)->getTitle()<<",";
-        out<<bookList.at(i)->getbookID()<<",";
-        out<<bookList.at(i)->getAuthor()<<",";
-        out<<bookList.at(i)->getDatePublished()<<",";
-        out<<bookList.at(i)->getDescription()<<",";
-        out<<bookList.at(i)->getNumCopy()<<",";
-        out<<bookList.at(i)->getGenre()<<",";
-        out<<bookList.at(i)->getAvail()<<",";
-        out<<bookList.at(i)->getImageFilePath()<<"\n";
+    QString opBook("book.txt");
+    QFile outputFileBook(opBook);
+     outputFileBook.open(QIODevice::WriteOnly|QIODevice::Text);
+     QTextStream out(&outputFileBook);
+     for(int i=0;i<bookList.size();i++)
+     {
 
-    }
-    out.flush();
-    outputFileBook.close();
+         out<<bookList.at(i)->getTitle()<<",";
+         out<<bookList.at(i)->getbookID()<<",";
+         out<<bookList.at(i)->getAuthor()<<",";
+         out<<bookList.at(i)->getDatePublished()<<",";
+         out<<bookList.at(i)->getDescription()<<",";
+         out<<bookList.at(i)->getNumCopy()<<",";
+         out<<bookList.at(i)->getGenre()<<",";
+         out<<bookList.at(i)->getAvail()<<",";
+         out<<bookList.at(i)->getDueBack()<<",";
+         out<<bookList.at(i)->getImageFilePath()<<"\n";
+
+
+     }
+     out.flush();
+     outputFileBook.close();
 
 }
 
 void MainWindow::bookLoaded()
 {
-    QFile inputFileBook("book.txt");
+    QString ipBook("book.txt");
+    QFile inputFileBook(ipBook);
     inputFileBook.open(QIODevice::ReadOnly|QIODevice::Text);
     QTextStream in(&inputFileBook);
 
@@ -403,7 +470,7 @@ void MainWindow::bookLoaded()
         QStringList info=line.split(",");
 
         ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
-        Book* temp=new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8));
+        Book* temp=new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
         bookList.push_back(temp);
     }
     in.flush();
@@ -439,14 +506,189 @@ void MainWindow::searchBook()
 void MainWindow::refreshListB()
 {
     for(int i=0;i<ui->ItemBook->count(); i++)
+
     {
         QListWidgetItem* item=ui->ItemBook->item(i);
         item->setHidden(false);
     }
 }
 
+void MainWindow::loanOutBook()
+{
+    int bookNum=ui->ItemBook->currentRow();
+    int memberNum=ui->ItemMember->currentRow();
+
+    Book* newBook=bookList.at(bookNum);
+    Member* newMember=itemMebs.at(memberNum);
+
+    QString bookID=ui->lbIDNum->text();
+    QString bookName=ui->lbTitle->text();
 
 
+    QDate cd=QDate::currentDate();
+    QDate cd1=cd.addDays(10);
+    QString date = cd1.toString();
+    if (newBook->getAvail()== "Not Available")
+    {
+        QMessageBox aRoar;
+        aRoar.setText("This book is not availble for loan at this time");
+    }
+    else if(newMember->getLoan1()=="")
+    {
+        newMember->setLoan1(bookName);
+        newMember->setReturn1(date);
+        newBook->setAvail("Not Available");
+        newBook->setDueBack(date);
+    }
+    else if (newMember->getLoan2()=="")
+    {
+        newMember->setLoan2(bookName);
+        newMember->setReturn2(date);
+        newBook->setAvail("Not Available");
+        newBook->setDueBack(date);
+    }
+    else if (newMember->getLoan3()=="")
+    {
+        newMember->setLoan3(bookName);
+        newMember->setReturn3(date);
+        newBook->setAvail("Not Available");
+        newBook->setDueBack(date);
+    }
+    else
+    {
+        QMessageBox mmbb;
+        mmbb.setText("Member has reached their max amount of books out. Member must return a book before getting anohter out.");
+mmbb.exec();
+    }
+    handleSaveMembers();
+    handleLoadMembers();
+
+
+
+}
+
+
+
+void MainWindow::returnB01()
+{
+    int bookNum=ui->ItemBook->currentRow();
+    int memberNum=ui->ItemMember->currentRow();
+
+    Book* newBook=bookList.at(bookNum);
+    Member* newMember=itemMebs.at(memberNum);
+    QString bookID;
+    QString bookName="";
+    QDate cd=QDate::currentDate();
+    QString date = cd.toString();
+
+    QFile outputFileReturn("return.txt");
+     outputFileReturn.open(QIODevice::WriteOnly|QIODevice::Text);
+     QTextStream out(&outputFileReturn);
+
+         out<<date<<",";
+         out<<bookList.at(bookNum)->getTitle()<<",";
+         out<<bookList.at(bookNum)->getbookID()<<",";
+         out<<bookList.at(bookNum)->getDueBack()<<",";
+         out<<itemMebs.at(memberNum)->getRandomNo()<<",";
+         out<<itemMebs.at(memberNum)->getMebName()<<"\n";
+
+     out.flush();
+     outputFileReturn.close();
+
+
+    newMember->setLoan1(bookName);
+    newMember->setReturn1("");
+    newBook->setAvail("Available");
+    newBook->setDueBack("");
+
+handleSaveMembers();
+handleLoadMembers();
+
+}
+void MainWindow::returnB02()
+{
+    int bookNum=ui->ItemBook->currentRow();
+    int memberNum=ui->ItemMember->currentRow();
+
+    Book* newBook=bookList.at(bookNum);
+    Member* newMember=itemMebs.at(memberNum);
+
+    QString bookID;
+    QString bookName="";
+
+    QDate cd=QDate::currentDate();
+    QString date = cd.toString();
+    QFile outputFileReturn("return.txt");
+     outputFileReturn.open(QIODevice::WriteOnly|QIODevice::Text);
+     QTextStream out(&outputFileReturn);
+
+         out<<date<<",";
+         out<<bookList.at(bookNum)->getTitle()<<",";
+         out<<bookList.at(bookNum)->getbookID()<<",";
+         out<<bookList.at(bookNum)->getDueBack()<<",";
+         out<<itemMebs.at(memberNum)->getRandomNo()<<",";
+         out<<itemMebs.at(memberNum)->getMebName()<<"\n";
+
+     out.flush();
+     outputFileReturn.close();
+       newMember->setLoan2(bookName);
+        newMember->setReturn2("");
+        newBook->setAvail("Available");
+        newBook->setDueBack("");
+
+handleSaveMembers();
+handleLoadMembers();
+
+}
+void MainWindow::returnB03()
+{
+    int bookNum=ui->ItemBook->currentRow();
+    int memberNum=ui->ItemMember->currentRow();
+
+    Book* newBook=bookList.at(bookNum);
+    Member* newMember=itemMebs.at(memberNum);
+
+    QString bookID;
+    QString bookName="";
+    QDate cd=QDate::currentDate();
+    QString date = cd.toString();
+
+    QFile outputFileReturn("return.txt");
+     outputFileReturn.open(QIODevice::WriteOnly|QIODevice::Text);
+     QTextStream out(&outputFileReturn);
+
+         out<<date<<",";
+         out<<bookList.at(bookNum)->getTitle()<<",";
+         out<<bookList.at(bookNum)->getbookID()<<",";
+         out<<bookList.at(bookNum)->getDueBack()<<",";
+         out<<itemMebs.at(memberNum)->getRandomNo()<<",";
+         out<<itemMebs.at(memberNum)->getMebName()<<"\n";
+
+     out.flush();
+     outputFileReturn.close();
+
+       newMember->setLoan3(bookName);
+        newMember->setReturn3("");
+        newBook->setAvail("Available");
+        newBook->setDueBack("");
+
+handleSaveMembers();
+handleLoadMembers();
+
+}
+
+void MainWindow::bookReport()
+{
+
+    book_report bookReport;
+    bookReport.setModal(true);
+    bookReport.exec();
+}
+
+void MainWindow::bookOverDue()
+{
+
+}
 
 void MainWindow::exitApp()
 {

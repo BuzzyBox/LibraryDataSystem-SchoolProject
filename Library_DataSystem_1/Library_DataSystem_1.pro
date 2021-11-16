@@ -18,6 +18,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
+    overdue_books.cpp \
     signup_menu.cpp \
     welcome_screen.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     lognin_menu.h \
     mainwindow.h \
     member.h \
+    overdue_books.h \
     signup_menu.h \
     welcome_screen.h
 
@@ -40,6 +42,7 @@ FORMS += \
     edit_memeber.ui \
     lognin_menu.ui \
     mainwindow.ui \
+    overdue_books.ui \
     signup_menu.ui \
     welcome_screen.ui
 
@@ -47,3 +50,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resources.qrc

@@ -3,6 +3,7 @@
 #include <QString>
 #include <QDate>
 
+
 class Member
 {
 private:
@@ -23,13 +24,14 @@ private:
     QString return1;
     QString return2;
     QString return3;
+    float fees;
 
 public:
 
     Member(QString mebName, QString mebUsername, QString mebPassword,
            QString mebEmail, QString birthDate, QString mebGender, QString mebAddress,  QString phoneNum,
            QString ranNo, QString loan1, QString loan2, QString loan3, QString return1, QString return2,
-           QString return3);
+           QString return3, float fees);
 
     //Setters
 
@@ -53,6 +55,7 @@ public:
     void setReturn1(QString return1);
     void setReturn2(QString return2);
     void setReturn3(QString return3);
+    void setFees(float fees);
 
 
     //Getters
@@ -78,7 +81,7 @@ public:
     QString getReturn1() const;
     QString getReturn2() const;
     QString getReturn3() const;
-
+    float getFees() const;
 
 
 };

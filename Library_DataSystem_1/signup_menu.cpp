@@ -60,11 +60,12 @@ void signup_menu::comfirmMember()
     QString r2="";
     QString l3="";
     QString r3="";
+    float fee=0;
 
 
     if(mebName.trimmed() != "" && mebUser.trimmed() != "" && mebPass.trimmed() != "" && mebEmail.trimmed() !="" && mebAd.trimmed() !="")
     {
-        *newMeb = new Member(mebName, mebUser, mebPass, mebEmail, mebBD, mebGen, mebAd, mebPh, ranString,l1,l2,l3,r1,r2,r3);
+        *newMeb = new Member(mebName, mebUser, mebPass, mebEmail, mebBD, mebGen, mebAd, mebPh, ranString,l1,l2,l3,r1,r2,r3,fee);
          this->close();
 
     }
