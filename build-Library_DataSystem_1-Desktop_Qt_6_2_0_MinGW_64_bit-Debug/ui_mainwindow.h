@@ -36,6 +36,8 @@ public:
     QAction *actionEdit_Existing_Book;
     QAction *actionLoad_Books;
     QAction *actionSave_Books;
+    QAction *actBR;
+    QAction *actOverDue;
     QWidget *centralwidget;
     QLabel *labBorder1;
     QLineEdit *lEditSearchBook1;
@@ -79,8 +81,27 @@ public:
     QLabel *lbGenreTxt;
     QLabel *labelGenre;
     QPushButton *pbRefresh;
-    QPushButton *pushButton;
+    QPushButton *pbLoan;
     QPushButton *pbRefreshM;
+    QLabel *labBorder7;
+    QLabel *lblMemberBook;
+    QLineEdit *loanBTitle01;
+    QLineEdit *loanBDate01;
+    QLineEdit *loanBTitle02;
+    QLineEdit *loanBDate02;
+    QLineEdit *loanBTitle03;
+    QLineEdit *loanBDate03;
+    QLabel *lblMemberBook_2;
+    QLabel *lblMemberBook_3;
+    QLabel *lblMemberBook_4;
+    QLabel *lblMemberBook_5;
+    QLabel *lblMemberBook_6;
+    QLabel *lblMemberBook_7;
+    QLabel *labelPublishText_2;
+    QLabel *lbDateBack;
+    QPushButton *btnReturn1;
+    QPushButton *btnReturn2;
+    QPushButton *btnReturn3;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuBooks;
@@ -109,6 +130,10 @@ public:
         actionLoad_Books->setObjectName(QString::fromUtf8("actionLoad_Books"));
         actionSave_Books = new QAction(MainWindow);
         actionSave_Books->setObjectName(QString::fromUtf8("actionSave_Books"));
+        actBR = new QAction(MainWindow);
+        actBR->setObjectName(QString::fromUtf8("actBR"));
+        actOverDue = new QAction(MainWindow);
+        actOverDue->setObjectName(QString::fromUtf8("actOverDue"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         labBorder1 = new QLabel(centralwidget);
@@ -410,7 +435,7 @@ public:
         lbAuthor->setMargin(3);
         lbDate = new QLabel(centralwidget);
         lbDate->setObjectName(QString::fromUtf8("lbDate"));
-        lbDate->setGeometry(QRect(279, 431, 371, 21));
+        lbDate->setGeometry(QRect(279, 431, 141, 21));
         lbDate->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -514,7 +539,7 @@ public:
         lbAvailability->setIndent(-1);
         labBorder5 = new QLabel(centralwidget);
         labBorder5->setObjectName(QString::fromUtf8("labBorder5"));
-        labBorder5->setGeometry(QRect(888, 70, 500, 270));
+        labBorder5->setGeometry(QRect(728, 70, 500, 270));
         labBorder5->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 613px;\n"
 "height: 104px;\n"
@@ -526,7 +551,7 @@ public:
         labBorder5->setAlignment(Qt::AlignCenter);
         btnSearchMember = new QPushButton(centralwidget);
         btnSearchMember->setObjectName(QString::fromUtf8("btnSearchMember"));
-        btnSearchMember->setGeometry(QRect(1428, 20, 101, 40));
+        btnSearchMember->setGeometry(QRect(1268, 20, 101, 40));
         btnSearchMember->setStyleSheet(QString::fromUtf8("/*Search Book Button*/\n"
 "\n"
 "position: absolute;\n"
@@ -556,7 +581,7 @@ public:
 "letter-spacing: -0.408px;"));
         labBorder6 = new QLabel(centralwidget);
         labBorder6->setObjectName(QString::fromUtf8("labBorder6"));
-        labBorder6->setGeometry(QRect(888, 350, 661, 191));
+        labBorder6->setGeometry(QRect(728, 350, 661, 191));
         labBorder6->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 613px;\n"
 "height: 104px;\n"
@@ -567,7 +592,7 @@ public:
 "border-radius: 20px;"));
         labBorder4 = new QLabel(centralwidget);
         labBorder4->setObjectName(QString::fromUtf8("labBorder4"));
-        labBorder4->setGeometry(QRect(888, 20, 500, 41));
+        labBorder4->setGeometry(QRect(728, 20, 500, 41));
         labBorder4->setStyleSheet(QString::fromUtf8("/*Border 3*/\n"
 "\n"
 "position: absolute;\n"
@@ -580,7 +605,7 @@ public:
 "border-radius: 20px;"));
         lEditSearchMember = new QLineEdit(centralwidget);
         lEditSearchMember->setObjectName(QString::fromUtf8("lEditSearchMember"));
-        lEditSearchMember->setGeometry(QRect(898, 30, 480, 21));
+        lEditSearchMember->setGeometry(QRect(738, 30, 480, 21));
         lEditSearchMember->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -614,7 +639,7 @@ public:
 ""));
         ItemMember = new QListWidget(centralwidget);
         ItemMember->setObjectName(QString::fromUtf8("ItemMember"));
-        ItemMember->setGeometry(QRect(898, 79, 480, 250));
+        ItemMember->setGeometry(QRect(738, 79, 480, 250));
         ItemMember->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
@@ -627,7 +652,7 @@ public:
 "border-radius: 10px;"));
         labelMemberEmailText = new QLabel(centralwidget);
         labelMemberEmailText->setObjectName(QString::fromUtf8("labelMemberEmailText"));
-        labelMemberEmailText->setGeometry(QRect(900, 465, 61, 22));
+        labelMemberEmailText->setGeometry(QRect(740, 465, 61, 22));
         labelMemberEmailText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -649,7 +674,7 @@ public:
         labelMemberEmailText->setAlignment(Qt::AlignCenter);
         labelMemberPhoneText = new QLabel(centralwidget);
         labelMemberPhoneText->setObjectName(QString::fromUtf8("labelMemberPhoneText"));
-        labelMemberPhoneText->setGeometry(QRect(903, 498, 61, 22));
+        labelMemberPhoneText->setGeometry(QRect(743, 498, 61, 22));
         labelMemberPhoneText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -671,7 +696,7 @@ public:
         labelMemberPhoneText->setAlignment(Qt::AlignCenter);
         labelUserNameText = new QLabel(centralwidget);
         labelUserNameText->setObjectName(QString::fromUtf8("labelUserNameText"));
-        labelUserNameText->setGeometry(QRect(894, 400, 101, 22));
+        labelUserNameText->setGeometry(QRect(734, 400, 101, 22));
         labelUserNameText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -693,7 +718,7 @@ public:
         labelUserNameText->setAlignment(Qt::AlignCenter);
         labelMemberNameTxt = new QLabel(centralwidget);
         labelMemberNameTxt->setObjectName(QString::fromUtf8("labelMemberNameTxt"));
-        labelMemberNameTxt->setGeometry(QRect(899, 368, 61, 22));
+        labelMemberNameTxt->setGeometry(QRect(739, 368, 61, 22));
         labelMemberNameTxt->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -715,7 +740,7 @@ public:
         labelMemberNameTxt->setAlignment(Qt::AlignCenter);
         lableMemberAddressText = new QLabel(centralwidget);
         lableMemberAddressText->setObjectName(QString::fromUtf8("lableMemberAddressText"));
-        lableMemberAddressText->setGeometry(QRect(903, 431, 71, 22));
+        lableMemberAddressText->setGeometry(QRect(743, 431, 71, 22));
         lableMemberAddressText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -737,7 +762,7 @@ public:
         lableMemberAddressText->setAlignment(Qt::AlignCenter);
         labelFeesText = new QLabel(centralwidget);
         labelFeesText->setObjectName(QString::fromUtf8("labelFeesText"));
-        labelFeesText->setGeometry(QRect(1294, 483, 91, 22));
+        labelFeesText->setGeometry(QRect(1134, 483, 91, 22));
         labelFeesText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -759,7 +784,7 @@ public:
         labelFeesText->setAlignment(Qt::AlignCenter);
         lbUName = new QLabel(centralwidget);
         lbUName->setObjectName(QString::fromUtf8("lbUName"));
-        lbUName->setGeometry(QRect(1000, 400, 281, 21));
+        lbUName->setGeometry(QRect(840, 400, 281, 21));
         lbUName->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -793,7 +818,7 @@ public:
         lbUName->setMargin(3);
         lbmebName = new QLabel(centralwidget);
         lbmebName->setObjectName(QString::fromUtf8("lbmebName"));
-        lbmebName->setGeometry(QRect(970, 368, 311, 21));
+        lbmebName->setGeometry(QRect(810, 368, 311, 21));
         lbmebName->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -827,7 +852,7 @@ public:
         lbmebName->setMargin(3);
         lbmebBirthdate = new QLabel(centralwidget);
         lbmebBirthdate->setObjectName(QString::fromUtf8("lbmebBirthdate"));
-        lbmebBirthdate->setGeometry(QRect(1390, 430, 141, 21));
+        lbmebBirthdate->setGeometry(QRect(1230, 430, 141, 21));
         lbmebBirthdate->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -861,7 +886,7 @@ public:
         lbmebBirthdate->setMargin(3);
         lbmebEmail = new QLabel(centralwidget);
         lbmebEmail->setObjectName(QString::fromUtf8("lbmebEmail"));
-        lbmebEmail->setGeometry(QRect(970, 465, 311, 21));
+        lbmebEmail->setGeometry(QRect(810, 465, 311, 21));
         lbmebEmail->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -895,7 +920,7 @@ public:
         lbmebEmail->setMargin(3);
         lbmebPhone = new QLabel(centralwidget);
         lbmebPhone->setObjectName(QString::fromUtf8("lbmebPhone"));
-        lbmebPhone->setGeometry(QRect(970, 498, 311, 21));
+        lbmebPhone->setGeometry(QRect(810, 498, 311, 21));
         lbmebPhone->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -929,7 +954,7 @@ public:
         lbmebPhone->setMargin(3);
         lbmebFees = new QLabel(centralwidget);
         lbmebFees->setObjectName(QString::fromUtf8("lbmebFees"));
-        lbmebFees->setGeometry(QRect(1390, 482, 141, 41));
+        lbmebFees->setGeometry(QRect(1230, 482, 141, 41));
         lbmebFees->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -964,7 +989,7 @@ public:
         lbmebFees->setMargin(3);
         lbGen = new QLabel(centralwidget);
         lbGen->setObjectName(QString::fromUtf8("lbGen"));
-        lbGen->setGeometry(QRect(1390, 370, 141, 21));
+        lbGen->setGeometry(QRect(1230, 370, 141, 21));
         lbGen->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -998,7 +1023,7 @@ public:
         lbGen->setMargin(3);
         labelMemberGenderText = new QLabel(centralwidget);
         labelMemberGenderText->setObjectName(QString::fromUtf8("labelMemberGenderText"));
-        labelMemberGenderText->setGeometry(QRect(1300, 370, 71, 22));
+        labelMemberGenderText->setGeometry(QRect(1140, 370, 71, 22));
         labelMemberGenderText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -1020,7 +1045,7 @@ public:
         labelMemberGenderText->setAlignment(Qt::AlignCenter);
         lableBritdayDateText_2 = new QLabel(centralwidget);
         lableBritdayDateText_2->setObjectName(QString::fromUtf8("lableBritdayDateText_2"));
-        lableBritdayDateText_2->setGeometry(QRect(1293, 430, 91, 22));
+        lableBritdayDateText_2->setGeometry(QRect(1133, 430, 91, 22));
         lableBritdayDateText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -1042,7 +1067,7 @@ public:
         lableBritdayDateText_2->setAlignment(Qt::AlignCenter);
         lbmebAdd = new QLabel(centralwidget);
         lbmebAdd->setObjectName(QString::fromUtf8("lbmebAdd"));
-        lbmebAdd->setGeometry(QRect(980, 432, 301, 21));
+        lbmebAdd->setGeometry(QRect(820, 432, 301, 21));
         lbmebAdd->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -1076,7 +1101,7 @@ public:
         lbmebAdd->setMargin(3);
         lbGenreTxt = new QLabel(centralwidget);
         lbGenreTxt->setObjectName(QString::fromUtf8("lbGenreTxt"));
-        lbGenreTxt->setGeometry(QRect(510, 500, 141, 20));
+        lbGenreTxt->setGeometry(QRect(510, 430, 141, 20));
         lbGenreTxt->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -1110,7 +1135,7 @@ public:
 ""));
         labelGenre = new QLabel(centralwidget);
         labelGenre->setObjectName(QString::fromUtf8("labelGenre"));
-        labelGenre->setGeometry(QRect(430, 500, 91, 22));
+        labelGenre->setGeometry(QRect(420, 430, 91, 22));
         labelGenre->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -1163,14 +1188,14 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #605E5E;"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(550, 72, 320, 41));
+        pbLoan = new QPushButton(centralwidget);
+        pbLoan->setObjectName(QString::fromUtf8("pbLoan"));
+        pbLoan->setGeometry(QRect(550, 76, 151, 61));
         QFont font;
-        font.setPointSize(24);
+        font.setPointSize(16);
         font.setBold(true);
-        pushButton->setFont(font);
-        pushButton->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+        pbLoan->setFont(font);
+        pbLoan->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
 "width: 328.88px;\n"
@@ -1182,7 +1207,7 @@ public:
 "border-radius: 10px;"));
         pbRefreshM = new QPushButton(centralwidget);
         pbRefreshM->setObjectName(QString::fromUtf8("pbRefreshM"));
-        pbRefreshM->setGeometry(QRect(1400, 300, 61, 41));
+        pbRefreshM->setGeometry(QRect(1240, 300, 61, 41));
         pbRefreshM->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
@@ -1213,6 +1238,481 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #605E5E;"));
+        labBorder7 = new QLabel(centralwidget);
+        labBorder7->setObjectName(QString::fromUtf8("labBorder7"));
+        labBorder7->setGeometry(QRect(1240, 70, 181, 221));
+        labBorder7->setStyleSheet(QString::fromUtf8("position: absolute;\n"
+"width: 613px;\n"
+"height: 104px;\n"
+"left: 34px;\n"
+"top: 112px;\n"
+"\n"
+"background: #C4C4C4;\n"
+"border-radius: 20px;"));
+        lblMemberBook = new QLabel(centralwidget);
+        lblMemberBook->setObjectName(QString::fromUtf8("lblMemberBook"));
+        lblMemberBook->setGeometry(QRect(1260, 80, 141, 22));
+        lblMemberBook->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook->setAlignment(Qt::AlignCenter);
+        loanBTitle01 = new QLineEdit(centralwidget);
+        loanBTitle01->setObjectName(QString::fromUtf8("loanBTitle01"));
+        loanBTitle01->setGeometry(QRect(1300, 110, 113, 20));
+        loanBTitle01->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        loanBDate01 = new QLineEdit(centralwidget);
+        loanBDate01->setObjectName(QString::fromUtf8("loanBDate01"));
+        loanBDate01->setGeometry(QRect(1312, 140, 101, 20));
+        loanBDate01->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        loanBTitle02 = new QLineEdit(centralwidget);
+        loanBTitle02->setObjectName(QString::fromUtf8("loanBTitle02"));
+        loanBTitle02->setGeometry(QRect(1300, 170, 113, 20));
+        loanBTitle02->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        loanBDate02 = new QLineEdit(centralwidget);
+        loanBDate02->setObjectName(QString::fromUtf8("loanBDate02"));
+        loanBDate02->setGeometry(QRect(1312, 200, 101, 20));
+        loanBDate02->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        loanBTitle03 = new QLineEdit(centralwidget);
+        loanBTitle03->setObjectName(QString::fromUtf8("loanBTitle03"));
+        loanBTitle03->setGeometry(QRect(1300, 230, 113, 20));
+        loanBTitle03->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        loanBDate03 = new QLineEdit(centralwidget);
+        loanBDate03->setObjectName(QString::fromUtf8("loanBDate03"));
+        loanBDate03->setGeometry(QRect(1312, 260, 101, 20));
+        loanBDate03->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        lblMemberBook_2 = new QLabel(centralwidget);
+        lblMemberBook_2->setObjectName(QString::fromUtf8("lblMemberBook_2"));
+        lblMemberBook_2->setGeometry(QRect(1240, 110, 71, 22));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Roboto")});
+        font1.setBold(false);
+        font1.setItalic(false);
+        lblMemberBook_2->setFont(font1);
+        lblMemberBook_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_2->setAlignment(Qt::AlignCenter);
+        lblMemberBook_3 = new QLabel(centralwidget);
+        lblMemberBook_3->setObjectName(QString::fromUtf8("lblMemberBook_3"));
+        lblMemberBook_3->setGeometry(QRect(1240, 140, 71, 22));
+        lblMemberBook_3->setFont(font1);
+        lblMemberBook_3->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_3->setAlignment(Qt::AlignCenter);
+        lblMemberBook_4 = new QLabel(centralwidget);
+        lblMemberBook_4->setObjectName(QString::fromUtf8("lblMemberBook_4"));
+        lblMemberBook_4->setGeometry(QRect(1240, 170, 71, 22));
+        lblMemberBook_4->setFont(font1);
+        lblMemberBook_4->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_4->setAlignment(Qt::AlignCenter);
+        lblMemberBook_5 = new QLabel(centralwidget);
+        lblMemberBook_5->setObjectName(QString::fromUtf8("lblMemberBook_5"));
+        lblMemberBook_5->setGeometry(QRect(1240, 230, 71, 22));
+        lblMemberBook_5->setFont(font1);
+        lblMemberBook_5->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_5->setAlignment(Qt::AlignCenter);
+        lblMemberBook_6 = new QLabel(centralwidget);
+        lblMemberBook_6->setObjectName(QString::fromUtf8("lblMemberBook_6"));
+        lblMemberBook_6->setGeometry(QRect(1240, 200, 71, 22));
+        lblMemberBook_6->setFont(font1);
+        lblMemberBook_6->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_6->setAlignment(Qt::AlignCenter);
+        lblMemberBook_7 = new QLabel(centralwidget);
+        lblMemberBook_7->setObjectName(QString::fromUtf8("lblMemberBook_7"));
+        lblMemberBook_7->setGeometry(QRect(1240, 260, 71, 22));
+        lblMemberBook_7->setFont(font1);
+        lblMemberBook_7->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 11px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblMemberBook_7->setAlignment(Qt::AlignCenter);
+        labelPublishText_2 = new QLabel(centralwidget);
+        labelPublishText_2->setObjectName(QString::fromUtf8("labelPublishText_2"));
+        labelPublishText_2->setGeometry(QRect(390, 500, 111, 22));
+        labelPublishText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelPublishText_2->setAlignment(Qt::AlignCenter);
+        lbDateBack = new QLabel(centralwidget);
+        lbDateBack->setObjectName(QString::fromUtf8("lbDateBack"));
+        lbDateBack->setGeometry(QRect(500, 500, 141, 21));
+        lbDateBack->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        lbDateBack->setMargin(3);
+        btnReturn1 = new QPushButton(centralwidget);
+        btnReturn1->setObjectName(QString::fromUtf8("btnReturn1"));
+        btnReturn1->setGeometry(QRect(1443, 72, 130, 60));
+        QFont font2;
+        font2.setPointSize(14);
+        font2.setBold(false);
+        btnReturn1->setFont(font2);
+        btnReturn1->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+"\n"
+"position: absolute;\n"
+"width: 328.88px;\n"
+"height: 258.34px;\n"
+"left: 25.53px;\n"
+"top: 154.21px;\n"
+"\n"
+"background: #B7CFDA;\n"
+"border-radius: 10px;"));
+        btnReturn2 = new QPushButton(centralwidget);
+        btnReturn2->setObjectName(QString::fromUtf8("btnReturn2"));
+        btnReturn2->setGeometry(QRect(1443, 148, 130, 60));
+        btnReturn2->setFont(font2);
+        btnReturn2->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+"\n"
+"position: absolute;\n"
+"width: 328.88px;\n"
+"height: 258.34px;\n"
+"left: 25.53px;\n"
+"top: 154.21px;\n"
+"\n"
+"background: #B7CFDA;\n"
+"border-radius: 10px;"));
+        btnReturn3 = new QPushButton(centralwidget);
+        btnReturn3->setObjectName(QString::fromUtf8("btnReturn3"));
+        btnReturn3->setGeometry(QRect(1443, 226, 130, 60));
+        btnReturn3->setFont(font2);
+        btnReturn3->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+"\n"
+"position: absolute;\n"
+"width: 328.88px;\n"
+"height: 258.34px;\n"
+"left: 25.53px;\n"
+"top: 154.21px;\n"
+"\n"
+"/*background: #AFD6E7;*/\n"
+"background: #B7CFDA;\n"
+"border-radius: 10px;"));
         MainWindow->setCentralWidget(centralwidget);
         labBorder2->raise();
         labBorder1->raise();
@@ -1256,8 +1756,27 @@ public:
         lbGenreTxt->raise();
         labelGenre->raise();
         pbRefresh->raise();
-        pushButton->raise();
+        pbLoan->raise();
         pbRefreshM->raise();
+        labBorder7->raise();
+        lblMemberBook->raise();
+        loanBTitle01->raise();
+        loanBDate01->raise();
+        loanBTitle02->raise();
+        loanBDate02->raise();
+        loanBTitle03->raise();
+        loanBDate03->raise();
+        lblMemberBook_2->raise();
+        lblMemberBook_3->raise();
+        lblMemberBook_4->raise();
+        lblMemberBook_5->raise();
+        lblMemberBook_6->raise();
+        lblMemberBook_7->raise();
+        labelPublishText_2->raise();
+        lbDateBack->raise();
+        btnReturn1->raise();
+        btnReturn2->raise();
+        btnReturn3->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1600, 21));
@@ -1282,6 +1801,8 @@ public:
         menuBooks->addAction(actionEdit_Existing_Book);
         menuBooks->addAction(actionLoad_Books);
         menuBooks->addAction(actionSave_Books);
+        menuBooks->addAction(actBR);
+        menuBooks->addAction(actOverDue);
 
         retranslateUi(MainWindow);
 
@@ -1300,6 +1821,8 @@ public:
         actionEdit_Existing_Book->setText(QCoreApplication::translate("MainWindow", "Edit Existing Book", nullptr));
         actionLoad_Books->setText(QCoreApplication::translate("MainWindow", "Load Books", nullptr));
         actionSave_Books->setText(QCoreApplication::translate("MainWindow", "Save Books", nullptr));
+        actBR->setText(QCoreApplication::translate("MainWindow", "Book Report", nullptr));
+        actOverDue->setText(QCoreApplication::translate("MainWindow", "Over Due Books", nullptr));
         labBorder1->setText(QString());
         lEditSearchBook1->setText(QCoreApplication::translate("MainWindow", "Search Books", nullptr));
         btnSearchBook->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
@@ -1340,8 +1863,25 @@ public:
         lbGenreTxt->setText(QCoreApplication::translate("MainWindow", "Genre", nullptr));
         labelGenre->setText(QCoreApplication::translate("MainWindow", "Genre:", nullptr));
         pbRefresh->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Loan", nullptr));
+        pbLoan->setText(QCoreApplication::translate("MainWindow", "Loan \n"
+"Book", nullptr));
         pbRefreshM->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        labBorder7->setText(QString());
+        lblMemberBook->setText(QCoreApplication::translate("MainWindow", "Member Loans:", nullptr));
+        lblMemberBook_2->setText(QCoreApplication::translate("MainWindow", "Book Title", nullptr));
+        lblMemberBook_3->setText(QCoreApplication::translate("MainWindow", "Return Date", nullptr));
+        lblMemberBook_4->setText(QCoreApplication::translate("MainWindow", "Book Title", nullptr));
+        lblMemberBook_5->setText(QCoreApplication::translate("MainWindow", "Book Title", nullptr));
+        lblMemberBook_6->setText(QCoreApplication::translate("MainWindow", "Return Date", nullptr));
+        lblMemberBook_7->setText(QCoreApplication::translate("MainWindow", "Return Date", nullptr));
+        labelPublishText_2->setText(QCoreApplication::translate("MainWindow", "Due Back:", nullptr));
+        lbDateBack->setText(QCoreApplication::translate("MainWindow", "Due Back Date", nullptr));
+        btnReturn1->setText(QCoreApplication::translate("MainWindow", "Return \n"
+" Book 1", nullptr));
+        btnReturn2->setText(QCoreApplication::translate("MainWindow", "Return\n"
+" Book 2", nullptr));
+        btnReturn3->setText(QCoreApplication::translate("MainWindow", "Return\n"
+" Book 3", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "Members", nullptr));
         menuBooks->setTitle(QCoreApplication::translate("MainWindow", "Books", nullptr));
     } // retranslateUi

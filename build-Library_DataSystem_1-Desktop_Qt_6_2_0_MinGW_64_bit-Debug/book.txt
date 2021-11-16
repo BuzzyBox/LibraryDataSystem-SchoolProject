@@ -1,1 +1,1 @@
-a,a,a,1/01/2000,aa,4,Adventure,Available,./images/GarfieldCharacter.jpg
+Life of Pi,FICTION,Yann Martel,11/09/2001,story of a young man who survives a harrowing shipwreck and months in a lifeboat with a large Bengal tiger named Richard Parker,1,Adventure,Available,15/11/2021,./images/9780156027328.jpg

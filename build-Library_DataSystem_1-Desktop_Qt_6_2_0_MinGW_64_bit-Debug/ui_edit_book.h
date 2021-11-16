@@ -46,6 +46,8 @@ public:
     QLabel *imageBox;
     QLabel *labelEdBookDesText_2;
     QPushButton *bpLoadImage;
+    QLabel *lblAvail_2;
+    QDateEdit *dateDue;
 
     void setupUi(QDialog *edit_book)
     {
@@ -491,7 +493,7 @@ public:
         lblAvail->setAlignment(Qt::AlignCenter);
         cBavailability = new QComboBox(edit_book);
         cBavailability->setObjectName(QString::fromUtf8("cBavailability"));
-        cBavailability->setGeometry(QRect(160, 460, 201, 22));
+        cBavailability->setGeometry(QRect(160, 460, 141, 22));
         leDescription = new QLineEdit(edit_book);
         leDescription->setObjectName(QString::fromUtf8("leDescription"));
         leDescription->setGeometry(QRect(180, 270, 241, 121));
@@ -618,6 +620,61 @@ public:
 ";\n"
 "\n"
 ""));
+        lblAvail_2 = new QLabel(edit_book);
+        lblAvail_2->setObjectName(QString::fromUtf8("lblAvail_2"));
+        lblAvail_2->setGeometry(QRect(310, 460, 121, 21));
+        lblAvail_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        lblAvail_2->setAlignment(Qt::AlignCenter);
+        dateDue = new QDateEdit(edit_book);
+        dateDue->setObjectName(QString::fromUtf8("dateDue"));
+        dateDue->setGeometry(QRect(420, 460, 151, 22));
+        dateDue->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;"));
 
         retranslateUi(edit_book);
 
@@ -644,6 +701,7 @@ public:
         imageBox->setText(QString());
         labelEdBookDesText_2->setText(QCoreApplication::translate("edit_book", "Update Cover:", nullptr));
         bpLoadImage->setText(QCoreApplication::translate("edit_book", "Upload Image", nullptr));
+        lblAvail_2->setText(QCoreApplication::translate("edit_book", "Due Back:", nullptr));
     } // retranslateUi
 
 };
