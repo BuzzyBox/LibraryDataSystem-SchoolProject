@@ -6,6 +6,7 @@
 #include "member.h"
 #include "add_newbook.h"
 #include  "book.h"
+#include "prebook.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -42,12 +43,16 @@ public:
 
 //Loaning Books to members
      void loanOutBook();
+     void preOutBook();
      void returnB01();
     void returnB02();
     void returnB03();
     void bookReport();
     void bookOverDue();
 
+
+
+    void preBookList();
 
 private slots:
     //void on_pushButton_clicked();
@@ -58,5 +63,7 @@ private:
     //signup_menu *signUp;
 
      QVector<Book*> bookList;
+
+     QVector<preBook*> preList;
 };
 #endif // MAINWINDOW_H

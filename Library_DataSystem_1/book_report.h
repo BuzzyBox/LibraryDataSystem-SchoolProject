@@ -14,6 +14,10 @@ class book_report : public QDialog
 public:
     explicit book_report(QWidget *parent = nullptr);
     ~book_report();
+    void bookList();
+    void bookAvail();
+    void bookNotAvail();
+
 
 private:
     Ui::book_report *ui;

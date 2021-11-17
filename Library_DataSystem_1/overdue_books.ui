@@ -13,47 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="labelDateOverdueText">
-   <property name="geometry">
-    <rect>
-     <x>27</x>
-     <y>543</y>
-     <width>110</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* Name: */
-
-
-position: absolute;
-width: 104px;
-height: 28px;
-left: 65px;
-top: 136px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-/* or 92% */
-
-text-align: center;
-letter-spacing: -0.408px;</string>
-   </property>
-   <property name="text">
-    <string>Date-Overdue:</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelBoarderReport2">
    <property name="geometry">
     <rect>
-     <x>15</x>
-     <y>369</y>
+     <x>20</x>
+     <y>370</y>
      <width>761</width>
      <height>210</height>
     </rect>
@@ -72,7 +36,7 @@ border-radius: 20px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QListWidget" name="ItemOverdueList">
+  <widget class="QListWidget" name="ItemMember">
    <property name="geometry">
     <rect>
      <x>22</x>
@@ -134,192 +98,7 @@ letter-spacing: -0.408px;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelDateDateText">
-   <property name="geometry">
-    <rect>
-     <x>28</x>
-     <y>510</y>
-     <width>76</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* Name: */
-
-
-position: absolute;
-width: 104px;
-height: 28px;
-left: 65px;
-top: 136px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-/* or 92% */
-
-text-align: center;
-letter-spacing: -0.408px;</string>
-   </property>
-   <property name="text">
-    <string>Date Due:</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbOdDue">
-   <property name="geometry">
-    <rect>
-     <x>167</x>
-     <y>510</y>
-     <width>141</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*Border 2 */
-
-
-position: absolute;
-width: 560px;
-height: 45px;
-left: 53px;
-top: 142px;
-
-background: #EDEDED;
-border-radius: 5px;
-
-/*Text*/
-
-position: absolute;
-width: 305px;
-height: 31px;
-left: 115px;
-top: 153px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-/* or 92% */
-
-letter-spacing: -0.408px;
-
-color: #605E5E;</string>
-   </property>
-   <property name="text">
-    <string>Date Due</string>
-   </property>
-   <property name="margin">
-    <number>3</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbOddateBorrowed">
-   <property name="geometry">
-    <rect>
-     <x>167</x>
-     <y>478</y>
-     <width>141</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*Border 2 */
-
-
-position: absolute;
-width: 560px;
-height: 45px;
-left: 53px;
-top: 142px;
-
-background: #EDEDED;
-border-radius: 5px;
-
-/*Text*/
-
-position: absolute;
-width: 305px;
-height: 31px;
-left: 115px;
-top: 153px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-/* or 92% */
-
-letter-spacing: -0.408px;
-
-color: #605E5E;</string>
-   </property>
-   <property name="text">
-    <string>Borrowed</string>
-   </property>
-   <property name="margin">
-    <number>3</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbOdbooksBorrowed">
-   <property name="geometry">
-    <rect>
-     <x>167</x>
-     <y>414</y>
-     <width>591</width>
-     <height>55</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*Border 2 */
-
-
-position: absolute;
-width: 560px;
-height: 45px;
-left: 53px;
-top: 142px;
-
-background: #EDEDED;
-border-radius: 5px;
-
-/*Text*/
-
-position: absolute;
-width: 305px;
-height: 31px;
-left: 115px;
-top: 153px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-/* or 92% */
-
-letter-spacing: -0.408px;
-
-color: #605E5E;</string>
-   </property>
-   <property name="text">
-    <string>Books 
-Books 
-Books</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="margin">
-    <number>3</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbOdName">
+  <widget class="QLabel" name="lbName">
    <property name="geometry">
     <rect>
      <x>337</x>
@@ -367,7 +146,7 @@ color: #605E5E;</string>
     <number>3</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbOdmebID">
+  <widget class="QLabel" name="lbMebID">
    <property name="geometry">
     <rect>
      <x>167</x>
@@ -415,13 +194,13 @@ color: #605E5E;</string>
     <number>3</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbOdFees">
+  <widget class="QLabel" name="lbFees">
    <property name="geometry">
     <rect>
-     <x>437</x>
-     <y>480</y>
-     <width>321</width>
-     <height>85</height>
+     <x>610</x>
+     <y>430</y>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -466,59 +245,11 @@ color: #605E5E;</string>
     <number>3</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbOdoverdue">
-   <property name="geometry">
-    <rect>
-     <x>167</x>
-     <y>544</y>
-     <width>141</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*Border 2 */
-
-
-position: absolute;
-width: 560px;
-height: 45px;
-left: 53px;
-top: 142px;
-
-background: #EDEDED;
-border-radius: 5px;
-
-/*Text*/
-
-position: absolute;
-width: 305px;
-height: 31px;
-left: 115px;
-top: 153px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-/* or 92% */
-
-letter-spacing: -0.408px;
-
-color: #605E5E;</string>
-   </property>
-   <property name="text">
-    <string>Date Overdue</string>
-   </property>
-   <property name="margin">
-    <number>3</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelOverdueFeesText">
    <property name="geometry">
     <rect>
-     <x>317</x>
-     <y>479</y>
+     <x>480</x>
+     <y>430</y>
      <width>121</width>
      <height>22</height>
     </rect>
@@ -649,8 +380,8 @@ border-radius: 20px;</string>
   <widget class="QLabel" name="labelBooksBorrowedText">
    <property name="geometry">
     <rect>
-     <x>27</x>
-     <y>414</y>
+     <x>60</x>
+     <y>430</y>
      <width>129</width>
      <height>22</height>
     </rect>
@@ -682,12 +413,108 @@ letter-spacing: -0.408px;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelDateBorrowedText">
+  <widget class="QLabel" name="title01">
    <property name="geometry">
     <rect>
-     <x>27</x>
-     <y>477</y>
-     <width>118</width>
+     <x>180</x>
+     <y>500</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Title</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="date01">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>540</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Date</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelBooksBorrowedText_2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>470</y>
+     <width>129</width>
      <height>22</height>
     </rect>
    </property>
@@ -712,30 +539,370 @@ text-align: center;
 letter-spacing: -0.408px;</string>
    </property>
    <property name="text">
-    <string>Date Borrowed:</string>
+    <string>Loan 01</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="labelBooksBorrowedText_3">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>470</y>
+     <width>129</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Loan 02</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelBooksBorrowedText_4">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>470</y>
+     <width>129</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Loan 03</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelBooksBorrowedText_5">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>500</y>
+     <width>129</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Title:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelBooksBorrowedText_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>540</y>
+     <width>129</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Name: */
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>Due Back:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="date02">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>540</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Date</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title02">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>500</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Title</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title03">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>500</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Title</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="date03">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>540</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border 2 */
+
+
+position: absolute;
+width: 560px;
+height: 45px;
+left: 53px;
+top: 142px;
+
+background: #EDEDED;
+border-radius: 5px;
+
+/*Text*/
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #605E5E;</string>
+   </property>
+   <property name="text">
+    <string>Date</string>
+   </property>
+   <property name="margin">
+    <number>3</number>
+   </property>
+  </widget>
   <zorder>labelBoarderReport2</zorder>
   <zorder>labelBoarderReport1</zorder>
-  <zorder>labelDateOverdueText</zorder>
-  <zorder>ItemOverdueList</zorder>
+  <zorder>ItemMember</zorder>
   <zorder>labelMemberIDText</zorder>
-  <zorder>labelDateDateText</zorder>
-  <zorder>lbOdDue</zorder>
-  <zorder>lbOddateBorrowed</zorder>
-  <zorder>lbOdbooksBorrowed</zorder>
-  <zorder>lbOdName</zorder>
-  <zorder>lbOdmebID</zorder>
-  <zorder>lbOdFees</zorder>
-  <zorder>lbOdoverdue</zorder>
+  <zorder>lbName</zorder>
+  <zorder>lbMebID</zorder>
+  <zorder>lbFees</zorder>
   <zorder>labelOverdueFeesText</zorder>
   <zorder>labelBookOverdueText</zorder>
   <zorder>labelMemberNameText</zorder>
   <zorder>labelBooksBorrowedText</zorder>
-  <zorder>labelDateBorrowedText</zorder>
+  <zorder>title01</zorder>
+  <zorder>date01</zorder>
+  <zorder>labelBooksBorrowedText_2</zorder>
+  <zorder>labelBooksBorrowedText_3</zorder>
+  <zorder>labelBooksBorrowedText_4</zorder>
+  <zorder>labelBooksBorrowedText_5</zorder>
+  <zorder>labelBooksBorrowedText_6</zorder>
+  <zorder>date02</zorder>
+  <zorder>title02</zorder>
+  <zorder>title03</zorder>
+  <zorder>date03</zorder>
  </widget>
  <resources/>
  <connections/>

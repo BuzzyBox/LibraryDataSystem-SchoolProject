@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow m;
-    m.show();
+
 
     QMessageBox msgBox;
     lognin_menu login;
@@ -21,9 +21,11 @@ int main(int argc, char *argv[])
     }
     else
     {
-        msgBox.setText("Correct Credentials. You are welcome.");
-        msgBox.exec();
+        //msgBox.setText("Correct Credentials. You are welcome.");
+        //msgBox.exec();
+        m.show();
         a.exec();
+
     }
 
     return 0;

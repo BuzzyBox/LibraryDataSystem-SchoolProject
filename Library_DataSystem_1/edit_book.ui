@@ -453,6 +453,9 @@ line-height: 22px;
 
 color: #868181;</string>
    </property>
+   <property name="wrapping">
+    <bool>false</bool>
+   </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
@@ -483,7 +486,7 @@ border-radius: 8px;
 /*Text Gender*/ 
 
 position: absolute;
-width: 305px;
+width: 30px;
 height: 31px;
 left: 115px;
 top: 153px;
@@ -497,7 +500,10 @@ line-height: 22px;
 
 letter-spacing: -0.408px;
 
-color: #868181;</string>
+color: #868181;
+
+
+</string>
    </property>
   </widget>
   <widget class="QDateEdit" name="dEeditPD">
@@ -643,7 +649,7 @@ color: #868181;
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>450</y>
+     <y>454</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -683,6 +689,9 @@ letter-spacing: -0.408px;</string>
      <width>141</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
   </widget>
   <widget class="QLineEdit" name="leDescription">

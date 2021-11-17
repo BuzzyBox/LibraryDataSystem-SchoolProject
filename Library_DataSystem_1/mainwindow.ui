@@ -98,8 +98,8 @@ color: #868181;
      <string notr="true">/*Widget Book Style Sheet*/
 
 position: absolute;
-width: 328.88px;
-height: 258.34px;
+width: 30px;
+height: 30px;
 left: 25.53px;
 top: 154.21px;
 
@@ -821,8 +821,8 @@ color: #868181;
      <string notr="true">/*Widget Book Style Sheet*/
 
 position: absolute;
-width: 328.88px;
-height: 258.34px;
+width: 30px;
+height: 30px;
 left: 25.53px;
 top: 154.21px;
 
@@ -2475,6 +2475,38 @@ border-radius: 10px;</string>
  Book 3</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pbPreBook">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>70</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*Widget Book Style Sheet*/
+
+position: absolute;
+width: 328.88px;
+height: 258.34px;
+left: 25.53px;
+top: 154.21px;
+
+background: #FF9999;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Pre Book</string>
+    </property>
+   </widget>
    <zorder>labBorder2</zorder>
    <zorder>labBorder1</zorder>
    <zorder>lEditSearchBook1</zorder>
@@ -2538,6 +2570,7 @@ border-radius: 10px;</string>
    <zorder>btnReturn1</zorder>
    <zorder>btnReturn2</zorder>
    <zorder>btnReturn3</zorder>
+   <zorder>pbPreBook</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -2569,6 +2602,7 @@ border-radius: 10px;</string>
     <addaction name="actionSave_Books"/>
     <addaction name="actBR"/>
     <addaction name="actOverDue"/>
+    <addaction name="actPreBook"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuBooks"/>
@@ -2627,6 +2661,11 @@ border-radius: 10px;</string>
   <action name="actOverDue">
    <property name="text">
     <string>Over Due Books</string>
+   </property>
+  </action>
+  <action name="actPreBook">
+   <property name="text">
+    <string>Pre Book List</string>
    </property>
   </action>
  </widget>

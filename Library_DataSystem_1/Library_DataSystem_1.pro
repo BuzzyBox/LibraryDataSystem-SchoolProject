@@ -17,8 +17,10 @@ SOURCES += \
     lognin_menu.cpp \
     main.cpp \
     mainwindow.cpp \
+    meb_prebook.cpp \
     member.cpp \
     overdue_books.cpp \
+    prebook.cpp \
     signup_menu.cpp \
     welcome_screen.cpp
 
@@ -30,8 +32,10 @@ HEADERS += \
     edit_memeber.h \
     lognin_menu.h \
     mainwindow.h \
+    meb_prebook.h \
     member.h \
     overdue_books.h \
+    prebook.h \
     signup_menu.h \
     welcome_screen.h
 
@@ -42,6 +46,7 @@ FORMS += \
     edit_memeber.ui \
     lognin_menu.ui \
     mainwindow.ui \
+    meb_prebook.ui \
     overdue_books.ui \
     signup_menu.ui \
     welcome_screen.ui
@@ -50,6 +55,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    Resources.qrc

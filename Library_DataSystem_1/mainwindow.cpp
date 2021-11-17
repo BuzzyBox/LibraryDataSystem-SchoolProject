@@ -4,13 +4,15 @@
 #include "edit_memeber.h"
 #include "edit_book.h"
 #include "book_report.h"
+#include "overdue_books.h"
+#include "meb_prebook.h"
+#include"prebook.h"
 #include <QTextOption>
 #include <QMessageBox>
 #include <QString>
 #include <QStringList>
 #include <QFile>
 #include <QTextStream>
-#include <QDir>
 #include <QDate>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -53,7 +55,9 @@ MainWindow::MainWindow(QWidget *parent)
            this, &MainWindow::exitApp);
 
    connect(ui->actionAdd_Book, &QAction::triggered,this,&MainWindow::newBookOption);
+
      connect(ui->ItemBook, &QListWidget::itemClicked,this,&MainWindow::whenBookClicked);
+
      connect(ui->actionSave_Books, &QAction::triggered,this,&MainWindow::whenBookSaved);
      connect(ui->actionLoad_Books, &QAction::triggered,this,&MainWindow::bookLoaded);
      connect(ui->actionEdit_Existing_Book, &QAction::triggered,this,&MainWindow::editBookOption);
@@ -62,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
       connect(ui->pbRefreshM, &QPushButton::clicked, this, &MainWindow::refreshListM);
 
       connect(ui->pbLoan,&QPushButton::clicked, this, &MainWindow::loanOutBook );
+      connect(ui->pbPreBook,&QPushButton::clicked, this, &MainWindow::preOutBook );
 
       connect(ui->btnReturn1, &QPushButton::clicked,this,&MainWindow::returnB01);
       connect(ui->btnReturn2, &QPushButton::clicked,this,&MainWindow::returnB02);
@@ -69,6 +74,8 @@ MainWindow::MainWindow(QWidget *parent)
 
        connect(ui->actBR, &QAction::triggered,this,&MainWindow::bookReport);
         connect(ui->actOverDue, &QAction::triggered,this,&MainWindow::bookOverDue);
+
+        connect(ui->actPreBook, &QAction::triggered,this,&MainWindow::preBookList);
 
 
       bookLoaded();
@@ -82,6 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
 
       ui->pbRefresh->setHidden(true);
       ui->pbRefreshM->setHidden(true);
+
 
 
 
@@ -230,6 +238,7 @@ void MainWindow::handMemberEdited()
 
     }
 
+
 }
 
 void MainWindow::handleSaveMembers()
@@ -308,7 +317,10 @@ void MainWindow::handleSaveMembers()
     out.flush();
     outputFileMember.close();
 
+
  }
+
+
 
 void MainWindow::handleLoadMembers()
 {
@@ -422,17 +434,22 @@ void MainWindow::whenBookClicked()
 
         ui->labBookCover->setScaledContents(true);
 
+
+        ui->pbPreBook->setHidden(true);
+        if(newBook->getAvail()=="Not Available")
+        {
+            ui->pbPreBook->setHidden(false);
+        }
+
     }
 }
 void MainWindow::whenBookSaved()
 {
-    QString opBook("book.txt");
-    QFile outputFileBook(opBook);
+    QFile outputFileBook("book.txt");
      outputFileBook.open(QIODevice::WriteOnly|QIODevice::Text);
      QTextStream out(&outputFileBook);
      for(int i=0;i<bookList.size();i++)
      {
-
          out<<bookList.at(i)->getTitle()<<",";
          out<<bookList.at(i)->getbookID()<<",";
          out<<bookList.at(i)->getAuthor()<<",";
@@ -449,12 +466,12 @@ void MainWindow::whenBookSaved()
      out.flush();
      outputFileBook.close();
 
+
 }
 
 void MainWindow::bookLoaded()
 {
-    QString ipBook("book.txt");
-    QFile inputFileBook(ipBook);
+    QFile inputFileBook("book.txt");
     inputFileBook.open(QIODevice::ReadOnly|QIODevice::Text);
     QTextStream in(&inputFileBook);
 
@@ -469,13 +486,17 @@ void MainWindow::bookLoaded()
         QString line=in.readLine();
         QStringList info=line.split(",");
 
-        ui->ItemBook->addItem(info.at(0)+ "               "+info.at(1) );
+        ui->ItemBook->addItem("Title : "+info.at(0)+ "\n"+"ID No : "+info.at(1));
         Book* temp=new Book(info.at(0),info.at(1),info.at(2),info.at(3),info.at(4),info.at(5).toInt(),info.at(6),info.at(7),info.at(8), info.at(9));
         bookList.push_back(temp);
     }
     in.flush();
     inputFileBook.close();
 }
+
+
+
+
 void MainWindow::searchBook()
 {
     QString search=ui->lEditSearchBook1->text();
@@ -562,11 +583,66 @@ mmbb.exec();
     }
     handleSaveMembers();
     handleLoadMembers();
+    whenBookSaved();
+    bookLoaded();
 
 
 
 }
 
+void MainWindow::preOutBook()
+{
+    int bookNum=ui->ItemBook->currentRow();
+    int memberNum=ui->ItemMember->currentRow();
+
+    Book* newBook=bookList.at(bookNum);
+    Member* newMember=itemMebs.at(memberNum);
+
+    QString bookID=ui->lbIDNum->text();
+    QString bookName=ui->lbTitle->text();
+
+
+    QDate cd=QDate::currentDate();
+    QDate cd1=cd.addDays(10);
+    QString date = cd1.toString();
+
+    preBook* newPre=nullptr;
+
+    QString t=newBook->getTitle();
+    QString bid=newBook->getbookID();
+    QString db=newBook->getDueBack();
+    QString mid=newMember->getRandomNo();
+    QString mn=newMember->getMebName();
+
+    newPre = new preBook(t,bid,db,mid,mn,date);
+
+    if(newPre!=nullptr)
+    {
+        preList.push_back(newPre);
+    }
+
+
+
+
+    QFile outFilePre("prebook.txt");
+
+    outFilePre.open(QIODevice::WriteOnly|QIODevice::Text);
+    QTextStream out(&outFilePre);
+    for(int i=0; i<preList.size();i++)
+    {
+        out<<preList.at(i)->getTitle()<<",";
+        out<<preList.at(i)->getIDBook()<<",";
+        out<<preList.at(i)->getDueBack()<<",";
+        out<<preList.at(i)->getIDMember()<<",";
+        out<<preList.at(i)->getMemberName()<<",";
+        out<<preList.at(i)->getDate()<<"\n";
+    }
+
+
+    out.flush();
+    outFilePre.close();
+
+}
 
 
 void MainWindow::returnB01()
@@ -679,7 +755,7 @@ handleLoadMembers();
 
 void MainWindow::bookReport()
 {
-
+whenBookSaved();
     book_report bookReport;
     bookReport.setModal(true);
     bookReport.exec();
@@ -687,7 +763,15 @@ void MainWindow::bookReport()
 
 void MainWindow::bookOverDue()
 {
-
+    overdue_books bookOverdue;
+    bookOverdue.setModal(true);
+    bookOverdue.exec();
+}
+void MainWindow::preBookList()
+{
+    meb_prebook preBook;
+    preBook.setModal(true);
+    preBook.exec();
 }
 
 void MainWindow::exitApp()

@@ -452,11 +452,11 @@ letter-spacing: -0.408px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">/*boader Gender*/
-position: absolute;
+/*position: absolute;
 width: 156px;
 height: 37px;
 left: 239px;
-top: 352px;
+top: 352px;*/
 
 background: #EDEDED;
 border-radius: 8px; 
@@ -464,7 +464,7 @@ border-radius: 8px;
 /*Text Gender*/ 
 
 position: absolute;
-width: 305px;
+width: 30px;
 height: 31px;
 left: 115px;
 top: 153px;
@@ -478,7 +478,8 @@ line-height: 22px;
 
 letter-spacing: -0.408px;
 
-color: #868181;</string>
+color: #868181;
+</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelNewBookDesText">
@@ -768,9 +769,9 @@ letter-spacing: -0.408px;
   <widget class="QLineEdit" name="txtDescription">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>190</x>
      <y>270</y>
-     <width>301</width>
+     <width>291</width>
      <height>151</height>
     </rect>
    </property>

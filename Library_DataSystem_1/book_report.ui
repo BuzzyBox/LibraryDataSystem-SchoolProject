@@ -47,43 +47,11 @@ text-align: center;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnBRoverdue">
+  <widget class="QPushButton" name="btnNA">
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>520</y>
-     <width>130</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*Widget Book Style Sheet*/
-
-position: absolute;
-width: 328.88px;
-height: 258.34px;
-left: 25.53px;
-top: 154.21px;
-
-background: #DAB7B7;
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>Overdue</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnBRnotAvailable">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>440</y>
+     <y>500</y>
      <width>130</width>
      <height>51</height>
     </rect>
@@ -111,11 +79,11 @@ border-radius: 10px;</string>
     <string>Not Available</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnBRavailable">
+  <widget class="QPushButton" name="btnAA">
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>360</y>
+     <y>420</y>
      <width>130</width>
      <height>51</height>
     </rect>
@@ -181,18 +149,36 @@ border-radius: 20px;</string>
    <property name="styleSheet">
     <string notr="true">/*Widget Book Style Sheet*/
 
+/*Border 2 */
+
+
 position: absolute;
-width: 328.88px;
-height: 258.34px;
-left: 25.53px;
-top: 154.21px;
+width: 30px;
+height: 45px;
+left: 53px;
+top: 142px;
 
 background: #EDEDED;
-border-radius: 10px; 
+border-radius: 8px;
+
+/*Text*/
+
+position: absolute;
+width: 30px;
+height: 31px;
+left: 115px;
+top: 153px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: normal;</string>
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pbRefresh">
