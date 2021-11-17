@@ -158,11 +158,11 @@ letter-spacing: -0.408px;
 color: #868181;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtPassword">
+  <widget class="QLineEdit" name="txtID">
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>300</y>
+     <y>240</y>
      <width>591</width>
      <height>25</height>
     </rect>
@@ -200,7 +200,7 @@ letter-spacing: -0.408px;
 color: #868181;</string>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
+    <enum>QLineEdit::Normal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -273,13 +273,96 @@ text-align: center;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLineEdit" name="txtPassword">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>300</y>
+     <width>591</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*Border Sign-up 2 */
+
+
+position: absolute;
+width: 548px;
+height: 37px;
+left: 202px;
+top: 128px;
+
+background: #EDEDED;
+border-radius: 10px; 
+
+/*Text Username*/ 
+
+position: absolute;
+width: 305px;
+height: 31px;
+left: 115px;
+top: 153px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+letter-spacing: -0.408px;
+
+color: #868181;</string>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>243</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*login Username Text*/
+
+
+position: absolute;
+width: 104px;
+height: 28px;
+left: 65px;
+top: 136px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* or 92% */
+
+text-align: center;
+letter-spacing: -0.408px;</string>
+   </property>
+   <property name="text">
+    <string>ID:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>lbBorderLogin</zorder>
   <zorder>btnLogin</zorder>
   <zorder>label</zorder>
   <zorder>txtUsername</zorder>
-  <zorder>txtPassword</zorder>
+  <zorder>txtID</zorder>
   <zorder>label_2</zorder>
   <zorder>lbLoginText</zorder>
+  <zorder>txtPassword</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>

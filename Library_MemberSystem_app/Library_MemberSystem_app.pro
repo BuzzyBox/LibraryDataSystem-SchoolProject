@@ -9,15 +9,15 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    book.cpp \
     main.cpp \
     mainwindowmeb.cpp \
-    meb_login.cpp
+    meb_login.cpp \
+    member.cpp
 
 HEADERS += \
-    book.h \
     mainwindowmeb.h \
-    meb_login.h
+    meb_login.h \
+    member.h
 
 FORMS += \
     mainwindowmeb.ui \

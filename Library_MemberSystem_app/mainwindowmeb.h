@@ -2,7 +2,8 @@
 #define MAINWINDOWMEB_H
 
 #include <QMainWindow>
-#include "book.h"
+#include "member.h"
+#include "meb_login.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindowMeb; }
@@ -13,18 +14,22 @@ class MainWindowMeb : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindowMeb(QWidget *parent = nullptr);
+    MainWindowMeb(QString memberID, QWidget *parent = nullptr);
     ~MainWindowMeb();
 
     void exitApp();
     void getBookData();
     void whenBookClicked();
+    void loadMemberDetails();
 
+
+private slots:
+    void on_bntInfoClick_clicked();
 
 private:
     Ui::MainWindowMeb *ui;
-    QVector<Book*> booklist;
-    QString imageFilePath;
+    QVector<Member*>itemMebs;
+    QString memberID;
 
 };
 #endif // MAINWINDOWMEB_H

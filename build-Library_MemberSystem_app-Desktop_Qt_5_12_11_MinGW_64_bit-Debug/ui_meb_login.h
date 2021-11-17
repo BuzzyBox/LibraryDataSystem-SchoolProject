@@ -25,9 +25,11 @@ public:
     QLabel *lbBorderLogin;
     QLabel *label;
     QLineEdit *txtUsername;
-    QLineEdit *txtPassword;
+    QLineEdit *txtID;
     QLabel *label_2;
     QLabel *lbLoginText;
+    QLineEdit *txtPassword;
+    QLabel *label_4;
 
     void setupUi(QDialog *meb_login)
     {
@@ -132,10 +134,10 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #868181;"));
-        txtPassword = new QLineEdit(meb_login);
-        txtPassword->setObjectName(QString::fromUtf8("txtPassword"));
-        txtPassword->setGeometry(QRect(140, 300, 591, 25));
-        txtPassword->setStyleSheet(QString::fromUtf8("/*Border Sign-up 2 */\n"
+        txtID = new QLineEdit(meb_login);
+        txtID->setObjectName(QString::fromUtf8("txtID"));
+        txtID->setGeometry(QRect(140, 240, 591, 25));
+        txtID->setStyleSheet(QString::fromUtf8("/*Border Sign-up 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -165,7 +167,7 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #868181;"));
-        txtPassword->setEchoMode(QLineEdit::Password);
+        txtID->setEchoMode(QLineEdit::Normal);
         label_2 = new QLabel(meb_login);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(40, 302, 91, 20));
@@ -208,13 +210,71 @@ public:
 "align-items: center;\n"
 "text-align: center;"));
         lbLoginText->setAlignment(Qt::AlignCenter);
+        txtPassword = new QLineEdit(meb_login);
+        txtPassword->setObjectName(QString::fromUtf8("txtPassword"));
+        txtPassword->setGeometry(QRect(140, 300, 591, 25));
+        txtPassword->setStyleSheet(QString::fromUtf8("/*Border Sign-up 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 548px;\n"
+"height: 37px;\n"
+"left: 202px;\n"
+"top: 128px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 10px; \n"
+"\n"
+"/*Text Username*/ \n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;"));
+        txtPassword->setEchoMode(QLineEdit::Password);
+        label_4 = new QLabel(meb_login);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(40, 243, 91, 20));
+        label_4->setStyleSheet(QString::fromUtf8("/*login Username Text*/\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        label_4->setAlignment(Qt::AlignCenter);
         lbBorderLogin->raise();
         btnLogin->raise();
         label->raise();
         txtUsername->raise();
-        txtPassword->raise();
+        txtID->raise();
         label_2->raise();
         lbLoginText->raise();
+        txtPassword->raise();
+        label_4->raise();
 
         retranslateUi(meb_login);
 
@@ -229,6 +289,7 @@ public:
         label->setText(QApplication::translate("meb_login", "Username:", nullptr));
         label_2->setText(QApplication::translate("meb_login", "Password:", nullptr));
         lbLoginText->setText(QApplication::translate("meb_login", "Library System Login", nullptr));
+        label_4->setText(QApplication::translate("meb_login", "ID:", nullptr));
     } // retranslateUi
 
 };

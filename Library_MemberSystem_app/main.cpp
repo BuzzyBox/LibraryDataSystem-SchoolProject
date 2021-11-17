@@ -6,13 +6,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindowMeb w;
-    w.show();
-
-
     QMessageBox msgBox;
     meb_login login;
     login.setModal(true);
+
+
 
     if(login.exec() != QDialog::Accepted)
     {
@@ -21,6 +19,8 @@ int main(int argc, char *argv[])
     }
     else
     {
+        MainWindowMeb w(login.memberID, nullptr);
+        w.show();
         a.exec();
 
     }

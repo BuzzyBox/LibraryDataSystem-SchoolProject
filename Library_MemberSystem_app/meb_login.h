@@ -2,6 +2,7 @@
 #define MEB_LOGIN_H
 
 #include <QDialog>
+#include "member.h"
 
 namespace Ui {
 class meb_login;
@@ -13,7 +14,9 @@ class meb_login : public QDialog
 
 public:
     explicit meb_login(QWidget *parent = nullptr);
+    //QString loginName;
     ~meb_login();
+    QString memberID;
 
 private slots:
     void on_btnLogin_clicked();
