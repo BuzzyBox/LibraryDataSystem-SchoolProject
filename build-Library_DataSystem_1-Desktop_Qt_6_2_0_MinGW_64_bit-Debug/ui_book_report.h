@@ -22,9 +22,8 @@ class Ui_book_report
 {
 public:
     QLabel *labelBookReportText;
-    QPushButton *btnBRoverdue;
-    QPushButton *btnBRnotAvailable;
-    QPushButton *btnBRavailable;
+    QPushButton *btnNA;
+    QPushButton *btnAA;
     QLabel *labelBoarderReport1;
     QListWidget *ItemBook;
     QPushButton *pbRefresh;
@@ -54,28 +53,14 @@ public:
 "align-items: center;\n"
 "text-align: center;"));
         labelBookReportText->setAlignment(Qt::AlignCenter);
-        btnBRoverdue = new QPushButton(book_report);
-        btnBRoverdue->setObjectName(QString::fromUtf8("btnBRoverdue"));
-        btnBRoverdue->setGeometry(QRect(620, 520, 130, 51));
+        btnNA = new QPushButton(book_report);
+        btnNA->setObjectName(QString::fromUtf8("btnNA"));
+        btnNA->setGeometry(QRect(620, 500, 130, 51));
         QFont font;
         font.setPointSize(14);
         font.setBold(false);
-        btnBRoverdue->setFont(font);
-        btnBRoverdue->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
-"\n"
-"position: absolute;\n"
-"width: 328.88px;\n"
-"height: 258.34px;\n"
-"left: 25.53px;\n"
-"top: 154.21px;\n"
-"\n"
-"background: #DAB7B7;\n"
-"border-radius: 10px;"));
-        btnBRnotAvailable = new QPushButton(book_report);
-        btnBRnotAvailable->setObjectName(QString::fromUtf8("btnBRnotAvailable"));
-        btnBRnotAvailable->setGeometry(QRect(620, 440, 130, 51));
-        btnBRnotAvailable->setFont(font);
-        btnBRnotAvailable->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+        btnNA->setFont(font);
+        btnNA->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
 "width: 328.88px;\n"
@@ -85,11 +70,11 @@ public:
 "\n"
 "background: #A7BFB1;\n"
 "border-radius: 10px;"));
-        btnBRavailable = new QPushButton(book_report);
-        btnBRavailable->setObjectName(QString::fromUtf8("btnBRavailable"));
-        btnBRavailable->setGeometry(QRect(620, 360, 130, 51));
-        btnBRavailable->setFont(font);
-        btnBRavailable->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+        btnAA = new QPushButton(book_report);
+        btnAA->setObjectName(QString::fromUtf8("btnAA"));
+        btnAA->setGeometry(QRect(620, 420, 130, 51));
+        btnAA->setFont(font);
+        btnAA->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
 "width: 328.88px;\n"
@@ -116,18 +101,36 @@ public:
         ItemBook->setGeometry(QRect(25, 107, 561, 460));
         ItemBook->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
+"/*Border 2 */\n"
+"\n"
+"\n"
 "position: absolute;\n"
-"width: 328.88px;\n"
-"height: 258.34px;\n"
-"left: 25.53px;\n"
-"top: 154.21px;\n"
+"width: 30px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
 "\n"
 "background: #EDEDED;\n"
-"border-radius: 10px; \n"
+"border-radius: 8px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 30px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
 "\n"
 "font-family: Roboto;\n"
 "font-style: normal;\n"
-"font-weight: normal;"));
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #868181;"));
         pbRefresh = new QPushButton(book_report);
         pbRefresh->setObjectName(QString::fromUtf8("pbRefresh"));
         pbRefresh->setGeometry(QRect(620, 110, 131, 41));
@@ -171,9 +174,8 @@ public:
     {
         book_report->setWindowTitle(QCoreApplication::translate("book_report", "Dialog", nullptr));
         labelBookReportText->setText(QCoreApplication::translate("book_report", "Book Report", nullptr));
-        btnBRoverdue->setText(QCoreApplication::translate("book_report", "Overdue", nullptr));
-        btnBRnotAvailable->setText(QCoreApplication::translate("book_report", "Not Available", nullptr));
-        btnBRavailable->setText(QCoreApplication::translate("book_report", "Available", nullptr));
+        btnNA->setText(QCoreApplication::translate("book_report", "Not Available", nullptr));
+        btnAA->setText(QCoreApplication::translate("book_report", "Available", nullptr));
         labelBoarderReport1->setText(QString());
         pbRefresh->setText(QCoreApplication::translate("book_report", "Refresh", nullptr));
     } // retranslateUi

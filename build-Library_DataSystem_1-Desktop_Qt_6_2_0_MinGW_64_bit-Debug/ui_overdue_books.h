@@ -20,55 +20,37 @@ QT_BEGIN_NAMESPACE
 class Ui_overdue_books
 {
 public:
-    QLabel *labelDateOverdueText;
     QLabel *labelBoarderReport2;
-    QListWidget *ItemOverdueList;
+    QListWidget *ItemMember;
     QLabel *labelMemberIDText;
-    QLabel *labelDateDateText;
-    QLabel *lbOdDue;
-    QLabel *lbOddateBorrowed;
-    QLabel *lbOdbooksBorrowed;
-    QLabel *lbOdName;
-    QLabel *lbOdmebID;
-    QLabel *lbOdFees;
-    QLabel *lbOdoverdue;
+    QLabel *lbName;
+    QLabel *lbMebID;
+    QLabel *lbFees;
     QLabel *labelOverdueFeesText;
     QLabel *labelBookOverdueText;
     QLabel *labelMemberNameText;
     QLabel *labelBoarderReport1;
     QLabel *labelBooksBorrowedText;
-    QLabel *labelDateBorrowedText;
+    QLabel *title01;
+    QLabel *date01;
+    QLabel *labelBooksBorrowedText_2;
+    QLabel *labelBooksBorrowedText_3;
+    QLabel *labelBooksBorrowedText_4;
+    QLabel *labelBooksBorrowedText_5;
+    QLabel *labelBooksBorrowedText_6;
+    QLabel *date02;
+    QLabel *title02;
+    QLabel *title03;
+    QLabel *date03;
 
     void setupUi(QDialog *overdue_books)
     {
         if (overdue_books->objectName().isEmpty())
             overdue_books->setObjectName(QString::fromUtf8("overdue_books"));
         overdue_books->resize(800, 600);
-        labelDateOverdueText = new QLabel(overdue_books);
-        labelDateOverdueText->setObjectName(QString::fromUtf8("labelDateOverdueText"));
-        labelDateOverdueText->setGeometry(QRect(27, 543, 110, 22));
-        labelDateOverdueText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 104px;\n"
-"height: 28px;\n"
-"left: 65px;\n"
-"top: 136px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 18px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"text-align: center;\n"
-"letter-spacing: -0.408px;"));
-        labelDateOverdueText->setAlignment(Qt::AlignCenter);
         labelBoarderReport2 = new QLabel(overdue_books);
         labelBoarderReport2->setObjectName(QString::fromUtf8("labelBoarderReport2"));
-        labelBoarderReport2->setGeometry(QRect(15, 369, 761, 210));
+        labelBoarderReport2->setGeometry(QRect(20, 370, 761, 210));
         labelBoarderReport2->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 613px;\n"
 "height: 104px;\n"
@@ -77,10 +59,10 @@ public:
 "\n"
 "background: #C4C4C4;\n"
 "border-radius: 20px;"));
-        ItemOverdueList = new QListWidget(overdue_books);
-        ItemOverdueList->setObjectName(QString::fromUtf8("ItemOverdueList"));
-        ItemOverdueList->setGeometry(QRect(22, 79, 751, 270));
-        ItemOverdueList->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+        ItemMember = new QListWidget(overdue_books);
+        ItemMember->setObjectName(QString::fromUtf8("ItemMember"));
+        ItemMember->setGeometry(QRect(22, 79, 751, 270));
+        ItemMember->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
 "width: 328.88px;\n"
@@ -116,32 +98,10 @@ public:
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
         labelMemberIDText->setAlignment(Qt::AlignCenter);
-        labelDateDateText = new QLabel(overdue_books);
-        labelDateDateText->setObjectName(QString::fromUtf8("labelDateDateText"));
-        labelDateDateText->setGeometry(QRect(28, 510, 76, 22));
-        labelDateDateText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 104px;\n"
-"height: 28px;\n"
-"left: 65px;\n"
-"top: 136px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 18px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"text-align: center;\n"
-"letter-spacing: -0.408px;"));
-        labelDateDateText->setAlignment(Qt::AlignCenter);
-        lbOdDue = new QLabel(overdue_books);
-        lbOdDue->setObjectName(QString::fromUtf8("lbOdDue"));
-        lbOdDue->setGeometry(QRect(167, 510, 141, 21));
-        lbOdDue->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        lbName = new QLabel(overdue_books);
+        lbName->setObjectName(QString::fromUtf8("lbName"));
+        lbName->setGeometry(QRect(337, 384, 421, 21));
+        lbName->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -171,11 +131,11 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #605E5E;"));
-        lbOdDue->setMargin(3);
-        lbOddateBorrowed = new QLabel(overdue_books);
-        lbOddateBorrowed->setObjectName(QString::fromUtf8("lbOddateBorrowed"));
-        lbOddateBorrowed->setGeometry(QRect(167, 478, 141, 21));
-        lbOddateBorrowed->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        lbName->setMargin(3);
+        lbMebID = new QLabel(overdue_books);
+        lbMebID->setObjectName(QString::fromUtf8("lbMebID"));
+        lbMebID->setGeometry(QRect(167, 384, 101, 21));
+        lbMebID->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -205,11 +165,11 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #605E5E;"));
-        lbOddateBorrowed->setMargin(3);
-        lbOdbooksBorrowed = new QLabel(overdue_books);
-        lbOdbooksBorrowed->setObjectName(QString::fromUtf8("lbOdbooksBorrowed"));
-        lbOdbooksBorrowed->setGeometry(QRect(167, 414, 591, 55));
-        lbOdbooksBorrowed->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+        lbMebID->setMargin(3);
+        lbFees = new QLabel(overdue_books);
+        lbFees->setObjectName(QString::fromUtf8("lbFees"));
+        lbFees->setGeometry(QRect(610, 430, 141, 31));
+        lbFees->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -239,148 +199,11 @@ public:
 "letter-spacing: -0.408px;\n"
 "\n"
 "color: #605E5E;"));
-        lbOdbooksBorrowed->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        lbOdbooksBorrowed->setMargin(3);
-        lbOdName = new QLabel(overdue_books);
-        lbOdName->setObjectName(QString::fromUtf8("lbOdName"));
-        lbOdName->setGeometry(QRect(337, 384, 421, 21));
-        lbOdName->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 5px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 14px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #605E5E;"));
-        lbOdName->setMargin(3);
-        lbOdmebID = new QLabel(overdue_books);
-        lbOdmebID->setObjectName(QString::fromUtf8("lbOdmebID"));
-        lbOdmebID->setGeometry(QRect(167, 384, 101, 21));
-        lbOdmebID->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 5px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 14px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #605E5E;"));
-        lbOdmebID->setMargin(3);
-        lbOdFees = new QLabel(overdue_books);
-        lbOdFees->setObjectName(QString::fromUtf8("lbOdFees"));
-        lbOdFees->setGeometry(QRect(437, 480, 321, 85));
-        lbOdFees->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 5px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 14px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #605E5E;"));
-        lbOdFees->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        lbOdFees->setMargin(3);
-        lbOdoverdue = new QLabel(overdue_books);
-        lbOdoverdue->setObjectName(QString::fromUtf8("lbOdoverdue"));
-        lbOdoverdue->setGeometry(QRect(167, 544, 141, 21));
-        lbOdoverdue->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
-"\n"
-"\n"
-"position: absolute;\n"
-"width: 560px;\n"
-"height: 45px;\n"
-"left: 53px;\n"
-"top: 142px;\n"
-"\n"
-"background: #EDEDED;\n"
-"border-radius: 5px;\n"
-"\n"
-"/*Text*/\n"
-"\n"
-"position: absolute;\n"
-"width: 305px;\n"
-"height: 31px;\n"
-"left: 115px;\n"
-"top: 153px;\n"
-"\n"
-"font-family: Roboto;\n"
-"font-style: normal;\n"
-"font-weight: normal;\n"
-"font-size: 14px;\n"
-"line-height: 22px;\n"
-"/* or 92% */\n"
-"\n"
-"letter-spacing: -0.408px;\n"
-"\n"
-"color: #605E5E;"));
-        lbOdoverdue->setMargin(3);
+        lbFees->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        lbFees->setMargin(3);
         labelOverdueFeesText = new QLabel(overdue_books);
         labelOverdueFeesText->setObjectName(QString::fromUtf8("labelOverdueFeesText"));
-        labelOverdueFeesText->setGeometry(QRect(317, 479, 121, 22));
+        labelOverdueFeesText->setGeometry(QRect(480, 430, 121, 22));
         labelOverdueFeesText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -456,7 +279,7 @@ public:
         labelBoarderReport1->setAlignment(Qt::AlignCenter);
         labelBooksBorrowedText = new QLabel(overdue_books);
         labelBooksBorrowedText->setObjectName(QString::fromUtf8("labelBooksBorrowedText"));
-        labelBooksBorrowedText->setGeometry(QRect(27, 414, 129, 22));
+        labelBooksBorrowedText->setGeometry(QRect(60, 430, 129, 22));
         labelBooksBorrowedText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -476,10 +299,78 @@ public:
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
         labelBooksBorrowedText->setAlignment(Qt::AlignCenter);
-        labelDateBorrowedText = new QLabel(overdue_books);
-        labelDateBorrowedText->setObjectName(QString::fromUtf8("labelDateBorrowedText"));
-        labelDateBorrowedText->setGeometry(QRect(27, 477, 118, 22));
-        labelDateBorrowedText->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+        title01 = new QLabel(overdue_books);
+        title01->setObjectName(QString::fromUtf8("title01"));
+        title01->setGeometry(QRect(180, 500, 121, 21));
+        title01->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        title01->setMargin(3);
+        date01 = new QLabel(overdue_books);
+        date01->setObjectName(QString::fromUtf8("date01"));
+        date01->setGeometry(QRect(180, 540, 121, 21));
+        date01->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        date01->setMargin(3);
+        labelBooksBorrowedText_2 = new QLabel(overdue_books);
+        labelBooksBorrowedText_2->setObjectName(QString::fromUtf8("labelBooksBorrowedText_2"));
+        labelBooksBorrowedText_2->setGeometry(QRect(170, 470, 129, 22));
+        labelBooksBorrowedText_2->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
 "position: absolute;\n"
@@ -497,25 +388,253 @@ public:
 "\n"
 "text-align: center;\n"
 "letter-spacing: -0.408px;"));
-        labelDateBorrowedText->setAlignment(Qt::AlignCenter);
+        labelBooksBorrowedText_2->setAlignment(Qt::AlignCenter);
+        labelBooksBorrowedText_3 = new QLabel(overdue_books);
+        labelBooksBorrowedText_3->setObjectName(QString::fromUtf8("labelBooksBorrowedText_3"));
+        labelBooksBorrowedText_3->setGeometry(QRect(340, 470, 129, 22));
+        labelBooksBorrowedText_3->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelBooksBorrowedText_3->setAlignment(Qt::AlignCenter);
+        labelBooksBorrowedText_4 = new QLabel(overdue_books);
+        labelBooksBorrowedText_4->setObjectName(QString::fromUtf8("labelBooksBorrowedText_4"));
+        labelBooksBorrowedText_4->setGeometry(QRect(500, 470, 129, 22));
+        labelBooksBorrowedText_4->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelBooksBorrowedText_4->setAlignment(Qt::AlignCenter);
+        labelBooksBorrowedText_5 = new QLabel(overdue_books);
+        labelBooksBorrowedText_5->setObjectName(QString::fromUtf8("labelBooksBorrowedText_5"));
+        labelBooksBorrowedText_5->setGeometry(QRect(40, 500, 129, 22));
+        labelBooksBorrowedText_5->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelBooksBorrowedText_5->setAlignment(Qt::AlignCenter);
+        labelBooksBorrowedText_6 = new QLabel(overdue_books);
+        labelBooksBorrowedText_6->setObjectName(QString::fromUtf8("labelBooksBorrowedText_6"));
+        labelBooksBorrowedText_6->setGeometry(QRect(30, 540, 129, 22));
+        labelBooksBorrowedText_6->setStyleSheet(QString::fromUtf8("/* Name: */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 104px;\n"
+"height: 28px;\n"
+"left: 65px;\n"
+"top: 136px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 18px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"text-align: center;\n"
+"letter-spacing: -0.408px;"));
+        labelBooksBorrowedText_6->setAlignment(Qt::AlignCenter);
+        date02 = new QLabel(overdue_books);
+        date02->setObjectName(QString::fromUtf8("date02"));
+        date02->setGeometry(QRect(350, 540, 121, 21));
+        date02->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        date02->setMargin(3);
+        title02 = new QLabel(overdue_books);
+        title02->setObjectName(QString::fromUtf8("title02"));
+        title02->setGeometry(QRect(350, 500, 121, 21));
+        title02->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        title02->setMargin(3);
+        title03 = new QLabel(overdue_books);
+        title03->setObjectName(QString::fromUtf8("title03"));
+        title03->setGeometry(QRect(510, 500, 121, 21));
+        title03->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        title03->setMargin(3);
+        date03 = new QLabel(overdue_books);
+        date03->setObjectName(QString::fromUtf8("date03"));
+        date03->setGeometry(QRect(510, 540, 121, 21));
+        date03->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
+"\n"
+"\n"
+"position: absolute;\n"
+"width: 560px;\n"
+"height: 45px;\n"
+"left: 53px;\n"
+"top: 142px;\n"
+"\n"
+"background: #EDEDED;\n"
+"border-radius: 5px;\n"
+"\n"
+"/*Text*/\n"
+"\n"
+"position: absolute;\n"
+"width: 305px;\n"
+"height: 31px;\n"
+"left: 115px;\n"
+"top: 153px;\n"
+"\n"
+"font-family: Roboto;\n"
+"font-style: normal;\n"
+"font-weight: normal;\n"
+"font-size: 14px;\n"
+"line-height: 22px;\n"
+"/* or 92% */\n"
+"\n"
+"letter-spacing: -0.408px;\n"
+"\n"
+"color: #605E5E;"));
+        date03->setMargin(3);
         labelBoarderReport2->raise();
         labelBoarderReport1->raise();
-        labelDateOverdueText->raise();
-        ItemOverdueList->raise();
+        ItemMember->raise();
         labelMemberIDText->raise();
-        labelDateDateText->raise();
-        lbOdDue->raise();
-        lbOddateBorrowed->raise();
-        lbOdbooksBorrowed->raise();
-        lbOdName->raise();
-        lbOdmebID->raise();
-        lbOdFees->raise();
-        lbOdoverdue->raise();
+        lbName->raise();
+        lbMebID->raise();
+        lbFees->raise();
         labelOverdueFeesText->raise();
         labelBookOverdueText->raise();
         labelMemberNameText->raise();
         labelBooksBorrowedText->raise();
-        labelDateBorrowedText->raise();
+        title01->raise();
+        date01->raise();
+        labelBooksBorrowedText_2->raise();
+        labelBooksBorrowedText_3->raise();
+        labelBooksBorrowedText_4->raise();
+        labelBooksBorrowedText_5->raise();
+        labelBooksBorrowedText_6->raise();
+        date02->raise();
+        title02->raise();
+        title03->raise();
+        date03->raise();
 
         retranslateUi(overdue_books);
 
@@ -525,25 +644,27 @@ public:
     void retranslateUi(QDialog *overdue_books)
     {
         overdue_books->setWindowTitle(QCoreApplication::translate("overdue_books", "Dialog", nullptr));
-        labelDateOverdueText->setText(QCoreApplication::translate("overdue_books", "Date-Overdue:", nullptr));
         labelBoarderReport2->setText(QString());
         labelMemberIDText->setText(QCoreApplication::translate("overdue_books", "Member Id:", nullptr));
-        labelDateDateText->setText(QCoreApplication::translate("overdue_books", "Date Due:", nullptr));
-        lbOdDue->setText(QCoreApplication::translate("overdue_books", "Date Due", nullptr));
-        lbOddateBorrowed->setText(QCoreApplication::translate("overdue_books", "Borrowed", nullptr));
-        lbOdbooksBorrowed->setText(QCoreApplication::translate("overdue_books", "Books \n"
-"Books \n"
-"Books", nullptr));
-        lbOdName->setText(QCoreApplication::translate("overdue_books", "Member's Name", nullptr));
-        lbOdmebID->setText(QCoreApplication::translate("overdue_books", "ID", nullptr));
-        lbOdFees->setText(QCoreApplication::translate("overdue_books", "$", nullptr));
-        lbOdoverdue->setText(QCoreApplication::translate("overdue_books", "Date Overdue", nullptr));
+        lbName->setText(QCoreApplication::translate("overdue_books", "Member's Name", nullptr));
+        lbMebID->setText(QCoreApplication::translate("overdue_books", "ID", nullptr));
+        lbFees->setText(QCoreApplication::translate("overdue_books", "$", nullptr));
         labelOverdueFeesText->setText(QCoreApplication::translate("overdue_books", "Overdue Fees:", nullptr));
         labelBookOverdueText->setText(QCoreApplication::translate("overdue_books", "Overdue Books", nullptr));
         labelMemberNameText->setText(QCoreApplication::translate("overdue_books", "Name:", nullptr));
         labelBoarderReport1->setText(QString());
         labelBooksBorrowedText->setText(QCoreApplication::translate("overdue_books", "Books Borrowed:", nullptr));
-        labelDateBorrowedText->setText(QCoreApplication::translate("overdue_books", "Date Borrowed:", nullptr));
+        title01->setText(QCoreApplication::translate("overdue_books", "Title", nullptr));
+        date01->setText(QCoreApplication::translate("overdue_books", "Date", nullptr));
+        labelBooksBorrowedText_2->setText(QCoreApplication::translate("overdue_books", "Loan 01", nullptr));
+        labelBooksBorrowedText_3->setText(QCoreApplication::translate("overdue_books", "Loan 02", nullptr));
+        labelBooksBorrowedText_4->setText(QCoreApplication::translate("overdue_books", "Loan 03", nullptr));
+        labelBooksBorrowedText_5->setText(QCoreApplication::translate("overdue_books", "Title:", nullptr));
+        labelBooksBorrowedText_6->setText(QCoreApplication::translate("overdue_books", "Due Back:", nullptr));
+        date02->setText(QCoreApplication::translate("overdue_books", "Date", nullptr));
+        title02->setText(QCoreApplication::translate("overdue_books", "Title", nullptr));
+        title03->setText(QCoreApplication::translate("overdue_books", "Title", nullptr));
+        date03->setText(QCoreApplication::translate("overdue_books", "Date", nullptr));
     } // retranslateUi
 
 };

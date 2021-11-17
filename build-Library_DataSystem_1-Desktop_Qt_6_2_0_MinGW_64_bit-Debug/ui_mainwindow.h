@@ -38,6 +38,7 @@ public:
     QAction *actionSave_Books;
     QAction *actBR;
     QAction *actOverDue;
+    QAction *actPreBook;
     QWidget *centralwidget;
     QLabel *labBorder1;
     QLineEdit *lEditSearchBook1;
@@ -102,6 +103,7 @@ public:
     QPushButton *btnReturn1;
     QPushButton *btnReturn2;
     QPushButton *btnReturn3;
+    QPushButton *pbPreBook;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuBooks;
@@ -134,6 +136,8 @@ public:
         actBR->setObjectName(QString::fromUtf8("actBR"));
         actOverDue = new QAction(MainWindow);
         actOverDue->setObjectName(QString::fromUtf8("actOverDue"));
+        actPreBook = new QAction(MainWindow);
+        actPreBook->setObjectName(QString::fromUtf8("actPreBook"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         labBorder1 = new QLabel(centralwidget);
@@ -189,8 +193,8 @@ public:
         ItemBook->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
-"width: 328.88px;\n"
-"height: 258.34px;\n"
+"width: 30px;\n"
+"height: 30px;\n"
 "left: 25.53px;\n"
 "top: 154.21px;\n"
 "\n"
@@ -643,8 +647,8 @@ public:
         ItemMember->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
 "\n"
 "position: absolute;\n"
-"width: 328.88px;\n"
-"height: 258.34px;\n"
+"width: 30px;\n"
+"height: 30px;\n"
 "left: 25.53px;\n"
 "top: 154.21px;\n"
 "\n"
@@ -1713,6 +1717,20 @@ public:
 "/*background: #AFD6E7;*/\n"
 "background: #B7CFDA;\n"
 "border-radius: 10px;"));
+        pbPreBook = new QPushButton(centralwidget);
+        pbPreBook->setObjectName(QString::fromUtf8("pbPreBook"));
+        pbPreBook->setGeometry(QRect(550, 70, 151, 71));
+        pbPreBook->setFont(font);
+        pbPreBook->setStyleSheet(QString::fromUtf8("/*Widget Book Style Sheet*/\n"
+"\n"
+"position: absolute;\n"
+"width: 328.88px;\n"
+"height: 258.34px;\n"
+"left: 25.53px;\n"
+"top: 154.21px;\n"
+"\n"
+"background: #FF9999;\n"
+"border-radius: 10px;"));
         MainWindow->setCentralWidget(centralwidget);
         labBorder2->raise();
         labBorder1->raise();
@@ -1777,6 +1795,7 @@ public:
         btnReturn1->raise();
         btnReturn2->raise();
         btnReturn3->raise();
+        pbPreBook->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1600, 21));
@@ -1803,6 +1822,7 @@ public:
         menuBooks->addAction(actionSave_Books);
         menuBooks->addAction(actBR);
         menuBooks->addAction(actOverDue);
+        menuBooks->addAction(actPreBook);
 
         retranslateUi(MainWindow);
 
@@ -1823,6 +1843,7 @@ public:
         actionSave_Books->setText(QCoreApplication::translate("MainWindow", "Save Books", nullptr));
         actBR->setText(QCoreApplication::translate("MainWindow", "Book Report", nullptr));
         actOverDue->setText(QCoreApplication::translate("MainWindow", "Over Due Books", nullptr));
+        actPreBook->setText(QCoreApplication::translate("MainWindow", "Pre Book List", nullptr));
         labBorder1->setText(QString());
         lEditSearchBook1->setText(QCoreApplication::translate("MainWindow", "Search Books", nullptr));
         btnSearchBook->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
@@ -1882,6 +1903,7 @@ public:
 " Book 2", nullptr));
         btnReturn3->setText(QCoreApplication::translate("MainWindow", "Return\n"
 " Book 3", nullptr));
+        pbPreBook->setText(QCoreApplication::translate("MainWindow", "Pre Book", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "Members", nullptr));
         menuBooks->setTitle(QCoreApplication::translate("MainWindow", "Books", nullptr));
     } // retranslateUi

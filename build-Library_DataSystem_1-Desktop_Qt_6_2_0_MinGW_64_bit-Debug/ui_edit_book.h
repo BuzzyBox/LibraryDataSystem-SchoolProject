@@ -336,6 +336,7 @@ public:
 "/* or 92% */\n"
 "\n"
 "color: #868181;"));
+        sBEditNB->setWrapping(false);
         sBEditNB->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         sBEditNB->setMinimum(1);
         cBgenre = new QComboBox(edit_book);
@@ -354,7 +355,7 @@ public:
 "/*Text Gender*/ \n"
 "\n"
 "position: absolute;\n"
-"width: 305px;\n"
+"width: 30px;\n"
 "height: 31px;\n"
 "left: 115px;\n"
 "top: 153px;\n"
@@ -368,7 +369,10 @@ public:
 "\n"
 "letter-spacing: -0.408px;\n"
 "\n"
-"color: #868181;"));
+"color: #868181;\n"
+"\n"
+"\n"
+""));
         dEeditPD = new QDateEdit(edit_book);
         dEeditPD->setObjectName(QString::fromUtf8("dEeditPD"));
         dEeditPD->setGeometry(QRect(544, 180, 201, 31));
@@ -471,7 +475,7 @@ public:
 ""));
         lblAvail = new QLabel(edit_book);
         lblAvail->setObjectName(QString::fromUtf8("lblAvail"));
-        lblAvail->setGeometry(QRect(50, 450, 121, 31));
+        lblAvail->setGeometry(QRect(50, 454, 121, 31));
         lblAvail->setStyleSheet(QString::fromUtf8("/* Name: */\n"
 "\n"
 "\n"
@@ -494,6 +498,7 @@ public:
         cBavailability = new QComboBox(edit_book);
         cBavailability->setObjectName(QString::fromUtf8("cBavailability"));
         cBavailability->setGeometry(QRect(160, 460, 141, 22));
+        cBavailability->setStyleSheet(QString::fromUtf8(""));
         leDescription = new QLineEdit(edit_book);
         leDescription->setObjectName(QString::fromUtf8("leDescription"));
         leDescription->setGeometry(QRect(180, 270, 241, 121));

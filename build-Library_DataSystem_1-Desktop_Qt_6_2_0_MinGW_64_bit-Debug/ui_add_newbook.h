@@ -333,11 +333,11 @@ public:
         cBxGenres->setObjectName(QString::fromUtf8("cBxGenres"));
         cBxGenres->setGeometry(QRect(155, 225, 591, 31));
         cBxGenres->setStyleSheet(QString::fromUtf8("/*boader Gender*/\n"
-"position: absolute;\n"
+"/*position: absolute;\n"
 "width: 156px;\n"
 "height: 37px;\n"
 "left: 239px;\n"
-"top: 352px;\n"
+"top: 352px;*/\n"
 "\n"
 "background: #EDEDED;\n"
 "border-radius: 8px; \n"
@@ -345,7 +345,7 @@ public:
 "/*Text Gender*/ \n"
 "\n"
 "position: absolute;\n"
-"width: 305px;\n"
+"width: 30px;\n"
 "height: 31px;\n"
 "left: 115px;\n"
 "top: 153px;\n"
@@ -359,7 +359,8 @@ public:
 "\n"
 "letter-spacing: -0.408px;\n"
 "\n"
-"color: #868181;"));
+"color: #868181;\n"
+""));
         labelNewBookDesText = new QLabel(add_newbook);
         labelNewBookDesText->setObjectName(QString::fromUtf8("labelNewBookDesText"));
         labelNewBookDesText->setGeometry(QRect(35, 270, 151, 31));
@@ -555,7 +556,7 @@ public:
 ""));
         txtDescription = new QLineEdit(add_newbook);
         txtDescription->setObjectName(QString::fromUtf8("txtDescription"));
-        txtDescription->setGeometry(QRect(180, 270, 301, 151));
+        txtDescription->setGeometry(QRect(190, 270, 291, 151));
         txtDescription->setStyleSheet(QString::fromUtf8("/*Border 2 */\n"
 "\n"
 "\n"
