@@ -20,6 +20,12 @@ edit_book::edit_book(Book*& currentBook, QWidget *parent) :
       ui->cBavailability->setCurrentText(currentBook->getAvail());
       ui->cBgenre->setCurrentText(currentBook->getGenre());
 
+
+      QPixmap pixmap(currentBook->getImageFilePath());
+      ui->imageBox->setPixmap(pixmap);
+      ui->imageBox->setScaledContents(true);
+
+
       QString pdate=currentBook->getDatePublished();
       QDate dateP=QDate::fromString(pdate,"dd/MM/yyyy");
       ui->dEeditPD->setDate(dateP);
@@ -95,7 +101,7 @@ void edit_book::confirmUpdateBook()
       currentBook->setDatePublished(bookPublish);
       currentBook->setGenre(bookGenre);
       currentBook->setAvail(bookAvail);
-    //  currentBook->getImageFilePath(imageFilePath);
+      currentBook->setImageFilePath(imageFilePath);
       currentBook->setDueBack(bookBack);
         this->close();
     }
