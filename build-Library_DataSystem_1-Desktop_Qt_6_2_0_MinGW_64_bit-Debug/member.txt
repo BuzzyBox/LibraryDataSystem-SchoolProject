@@ -1,4 +1,4 @@
-Penelope Morison,Pipi99,1234,pipi99@email.com,8/09/1999,Female,247 Simons Hollow Road Selingrove,507-555-1818,7386,The Life of Pi,The Graveyard Book,The Best American Comics (2019),Sat Nov 27 2021,Sat Nov 27 2021,Sat Nov 27 2021,0
+Penelope Morison,Pipi99,1234,pipi99@email.com,8/09/1999,Female,247 Simons Hollow Road Selingrove,507-555-1818,7386,The Life of Pi,The Graveyard Book,The Best American Comics (2019),Thu Dec 2 2021,Sat Nov 27 2021,Sat Nov 27 2021,0
 Tamar Coeman,TamarIsHere,1234,tamarishere@email.com,4/03/1998,Female,45 Clover Drive Colorado Springs,719-555-5611,5475,,,,,,,0
 Fenna Esteban,Beanie16,1234,beanie16@email.com,8/10/2005,Female,203 Boardway Avanue City,423-555-5964,4868,,,,,,,0
 Denis Bradford,BradChad,1234,denisbradchad09@email.com,23/09/1990,Male,579 McVaney Road Asheville,828-555-7179,9901,,,,,,,0

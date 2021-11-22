@@ -1,0 +1,9 @@
+Penelope Morison,Pipi99,1234,pipi99@email.com,8/09/1999,Female,247 Simons Hollow Road Selingrove,507-555-1818,7386,The Life of Pi,The Graveyard Book,The Best American Comics (2019),Sat Nov 27 2021,Sat Nov 27 2021,Sat Nov 27 2021,0
+Tamar Coeman,TamarIsHere,1234,tamarishere@email.com,4/03/1998,Female,45 Clover Drive Colorado Springs,719-555-5611,5475,,,,,,,0
+Fenna Esteban,Beanie16,1234,beanie16@email.com,8/10/2005,Female,203 Boardway Avanue City,423-555-5964,4868,,,,,,,0
+Denis Bradford,BradChad,1234,denisbradchad09@email.com,23/09/1990,Male,579 McVaney Road Asheville,828-555-7179,9901,,,,,,,0
+Brutus Ó Frighil,BertMan2001,1234,bertman2001@email.com,30/06/2001,Male,498 Tertick Road Fort Myers,023-555-6685,8111,,,,,,,0
+Jennifer B Dewell,JennyBee96,1234,jennybdewell@email.com,17/01/1996,Female,29 Glenview Drive Corpus Town,023-555-1855,9322,,,,,,,0
+Yoshi Thwaite,_OSHIY_88,1234,oshiy88@email.com,12/03/1988,Nonbinary,211 White Avenue Rockport,021-555-2449,7711,,,,,,,0
+Yuto Faucheux,YesterdayTomorrow,1234,yutofaucheux@email.com,12/04/1995,Male,2150 Burton Avenue Altoona,021-555-8739,9073,,,,,,,0
+Quinn Holt,x0_Qu1nn1sth3Qu33n_0x,1234,quinnisthequeen@email.com,3/07/1998,Nonbinary,23 Giraffe Hill Drive Indianapolis,021-555-9469,2921,,,,,,,0

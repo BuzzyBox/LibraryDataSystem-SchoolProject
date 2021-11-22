@@ -1,4 +1,4 @@
-The Life of Pi,FICTION,Yann Martel,11/09/2001,,3,Adventure,Not Available,Sat Nov 27 2021,./images/9780156027328.jpg
+The Life of Pi,FICTION,Yann Martel,11/09/2001,,3,Adventure,Not Available,Thu Dec 2 2021,./images/9780156027328.jpg
 The Hitchhikers Guide to the Galaxy,SCIENCE FICTION,Douglas Adams,12/10/1979,,3,Science Fiction,Available,,./images/hitchhikers-guide-to-the-galaxy-80s.jpg
 The Graveyard Book,YOUNG ADULT FICTION,Neil Gaiman,30/09/2008,,3,Fantasy,Not Available,Sat Nov 27 2021,./images/2213661.jpg
 The Best American Comics (2019),741.5 BES,Bill Kartalopoulos & Jillian Tamaki,1/02/2019,,1,Graphic Novel,Not Available,Sat Nov 27 2021,./images/B07LC9FSJ2.01._SCLZZZZZZZ_SX500_.jpg
