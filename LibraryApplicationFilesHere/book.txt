@@ -1,0 +1,8 @@
+The Life of Pi,FICTION,Yann Martel,11/09/2001,,3,Adventure,Not Available,Mon Nov 29 2021,./images/9780156027328.jpg
+The Hitchhikers Guide to the Galaxy,SCIENCE FICTION,Douglas Adams,12/10/1979,,3,Science Fiction,Available,,./images/hitchhikers-guide-to-the-galaxy-80s.jpg
+The Graveyard Book,YOUNG ADULT FICTION,Neil Gaiman,30/09/2008,,3,Fantasy,Not Available,Sat Nov 27 2021,./images/2213661.jpg
+The Best American Comics (2019),741.5 BES,Bill Kartalopoulos & Jillian Tamaki,1/02/2019,,1,Graphic Novel,Not Available,Sat Nov 27 2021,./images/B07LC9FSJ2.01._SCLZZZZZZZ_SX500_.jpg
+Food in Jars: Preserving in Small Batches Year-Round,641.4 MCC,Marisa McClellan,22/04/2012,,3,Life Style,Available,,./images/17028622.jpg
+Women in White Coats,610.92 BLA,Olivia M Campbell,2/03/2021,,2,Health,Available,,./images/81F8aXptBgL.jpg
+The Algebraist,SCIENCE FICTION,Iain M. Banks,1/01/2004,,1,Science Fiction,Available,20/11/2021,./images/the-algebraist.jpg
+Collins Botanical Bible,746.2 SPE,Sonya Patel Ellis,1/01/2000,,1,Life Style,Available,19/11/2021,./imagesd61e754ac694e1c73c6dfb8e4128a3f0.jpg
