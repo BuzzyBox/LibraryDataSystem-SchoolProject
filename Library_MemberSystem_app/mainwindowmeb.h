@@ -22,10 +22,6 @@ public:
     void whenBookClicked();
     void loadMemberDetails();
 
-
-private slots:
-    void on_bntInfoClick_clicked();
-
 private:
     Ui::MainWindowMeb *ui;
     QVector<Member*>itemMebs;

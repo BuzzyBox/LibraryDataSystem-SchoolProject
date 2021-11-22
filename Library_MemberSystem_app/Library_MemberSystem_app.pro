@@ -11,13 +11,11 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindowmeb.cpp \
-    meb_login.cpp \
-    member.cpp
+    meb_login.cpp
 
 HEADERS += \
     mainwindowmeb.h \
-    meb_login.h \
-    member.h
+    meb_login.h
 
 FORMS += \
     mainwindowmeb.ui \
